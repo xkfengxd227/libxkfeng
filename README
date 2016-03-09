@@ -1,0 +1,21 @@
+This is for the libxkfeng series.
+
+to add new class into libxkfeng*, for example, [vafile]
+
+#1 copy necessary files into this folder, [vafile.c, vafile.h]
+#2 edit the generate.sh file, add necessary compile and share library commond line, [sudo gcc -c vafile.c, sudo ar -crs ...]
+#3 run generate.sh
+
+#4 if success, you will get a .a, [libxkfengvafile.a]
+#5 copy .h, .a file into include and library path
+
+
+# dependences
+
+toolstypes.o: common.h
+clustering.o: common.h
+heap.o: common.h
+vafile.o: common.h heap.h cost.h
+HB.o: common.h cost.h clustering.h heap.h
+HBPlus: common.h cost.h clustering.h heap.h
+

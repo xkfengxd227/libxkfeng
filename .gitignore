@@ -1,0 +1,10 @@
+# ignore temp files
+*~
+
+# ignore main.c and Makefile, they are used to test
+main.c
+Makefile
+
+# ignore test folders
+factory/
+index/
