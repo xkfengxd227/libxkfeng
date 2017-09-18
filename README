@@ -19,3 +19,6 @@ vafile.o: common.h heap.h cost.h
 HB.o: common.h cost.h clustering.h heap.h
 HBPlus: common.h cost.h clustering.h heap.h
 
+
+### 
+add content to practice github
