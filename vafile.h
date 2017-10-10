@@ -7,6 +7,15 @@
 #include "heap.h"
 #include "cost.h"
 
+/**	\brief	define two quantization types for vafile */
+#define	VAQuantizeToBin		0	// traditional type: quantized into bins
+#define	VAQuantizeToCenter	1	// quantization to bin centers (using round)
+
+#define	VAIndexData_None	0x00000000		// no code data
+#define	VAIndexData_Code	0x00000001		// va code indexed by id
+#define	VAIndexData_BinReg	0x00000010		// va code indexed by bins in each dimension
+#define VABinReg_Folder		"binreg"		// folder that stores bin regs
+
 /// Data element in VA-File
 typedef struct
 {
@@ -25,27 +34,30 @@ typedef struct
     float       *bound;         // boundaries of all dimension
     float       *inter_len;     // inverval length of each dimension
     int         *code;          // code for all data points
-
+	int			_qtype;			// quantization type
+	
 	/* some working variables */
 	float		**inter_alldiff_len_s;	// square lengths of all possible internal diff in each dimension: diff=0;1,2,...2^b-1;
 }VAConfig;
 
 /// initialize a VAConfig
-void VA_Init(VAConfig *cfg, int bi);
+void VA_Init(VAConfig *cfg, int bi, int _qtype);
 /// destroy a VAConfig structure
 void VA_Destroy(VAConfig *cfg);
 /// dealing with a dataset, figure out the cfgrations
 void VA_Config(VAConfig *cfg, const fDataSet *ds);
 /// generate a va-file code for all data points in a dataset
 void VA_Encode(VAConfig *cfg, const fDataSet *ds);
+/// encode a dataset using existing vaconfig, export the code
+int *VA_Export_Encode(const VAConfig *cfg, const fDataSet *ds);
 /// write a va-file index structure into files
 void VA_IndexIntoFile(const VAConfig *cfg, const char *indexfolder, const char *dsname);
 /** \brief check if exists index (i.e., va codes)
  *	return status
  */
-bool VA_CheckExistsIndex(const char *indexfolder, const char *dsname, int b);
+bool VA_CheckExistsIndex(const char *indexfolder, const char *dsname, int b, int _qtype);
 /// check and load a va-file index structure from files
-bool VA_IndexFromFile(VAConfig *cfg, const char *indexfolder, const char *dsname, int b);
+bool VA_IndexFromFile(VAConfig *cfg, const char *indexfolder, const char *dsname);
 /// search knn via vafile
 void VA_Search(const VAConfig *cfg, const fDataSet *qds, int nk, const char *folder, DoubleIndex **knn, Cost *cost);
 /** \brief prepare square interval lengths in each dimension */

@@ -1,0 +1,33 @@
+### this is the root directory for libxkfeng
+
+### libxkfeng notice
+
+to add new class into libxkfeng*, for example, [vafile]
+
+#1 copy necessary files into this folder, [vafile.c, vafile.h]
+#2 edit the generate.sh file, add necessary compile and share library commond line, [sudo gcc -c vafile.c, sudo ar -crs ...]
+#3 run generate.sh
+#4 if success, you will get a .a, [libxkfengvafile.a]
+#5 copy .h, .a file into include and library path
+
+# dependences
+dyarray.o: common.h
+clustering.o: common.h
+heap.o: common.h
+vafile.o: common.h heap.h cost.h
+HB.o: common.h cost.h clustering.h heap.h
+HBPlus: common.h cost.h clustering.h heap.h
+
+
+### when we create a new personal project, e.g. hb
+
+1) we first create a directory [hb] here
+2) we edit all need source/head files in this directory
+3) we mv to the [hb] path, and cp all needed source/head files into the project path to compile and run by calling ./__needlist.sh
+4) edit your main.c file
+5) self-define your mainext.h file
+
+Therefore, here is to remind you:
+
+1) remember to edit the source/head files in the libxkfeng root directory
+2) __needlist.sh only include libxkfeng files, ### do not ### put mainext.h file in the __needlist.sh, or you will regret

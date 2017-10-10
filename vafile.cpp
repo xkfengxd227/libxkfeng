@@ -1,7 +1,9 @@
 /**
  *  implementation for VA-File basic operations
  */
-#include <yael/vector.h>
+extern "C"{
+  #include <yael/vector.h>
+}
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
@@ -15,15 +17,16 @@
 #include "cost.h"
 
 /// initialize a VAConfig
-void VA_Init(VAConfig *cfg, int bi)
+void VA_Init(VAConfig *cfg, int bi, int _qtype)
 {
     cfg->nbit = bi;
     cfg->n = -1;
-    cfg->d = -1;	
+    cfg->d = -1;
 	cfg->bound = NULL;
 	cfg->inter_len = NULL;
 	cfg->code = NULL;
 	cfg->inter_alldiff_len_s = NULL;
+	cfg->_qtype = _qtype;
 }
 /// destroy a VAConfig structure
 void VA_Destroy(VAConfig *cfg)
@@ -39,7 +42,7 @@ void VA_Destroy(VAConfig *cfg)
     if(cfg->code != NULL){
         free(cfg->code); cfg->code = NULL;
     }
-	if(cfg->inter_alldiff_len_s != NULL){	
+	if(cfg->inter_alldiff_len_s != NULL){
 		for(di = 0; di < cfg->d; di++){
 			free(cfg->inter_alldiff_len_s[di]); cfg->inter_alldiff_len_s[di] = NULL;
 		}
@@ -54,8 +57,6 @@ void VA_Config(VAConfig *cfg, const fDataSet *ds)
     cfg->n = ds->n;
     cfg->bound = fvec_new(2*ds->d);
     cfg->inter_len = fvec_new(ds->d);
-
-    FILE *fp;
 
     /// 1. statistic lower and upper boundary of all dimensions
     int ni, di;
@@ -91,19 +92,68 @@ void VA_Encode(VAConfig *cfg, const fDataSet *ds)
     cfg->code = ivec_new(cfg->n*cfg->d);
     int ni, di;
     int pos;
-    int ninter = (int)pow(2,cfg->nbit);
+	float _quotient;
+	int _full_index = (int)pow(2.0, cfg->nbit) - 1;
+
     for(ni = 0; ni < cfg->n; ni++)
     {
         /// for a data point
         for(di = 0; di < cfg->d; di++)
         {
             /// for a certain dimension
-            pos = floor((ds->data[ni*ds->d+di] - cfg->bound[di*2]) / cfg->inter_len[di]);
-            pos = (pos >= ninter) ? (ninter - 1) : pos;     // in case the upper boundary
+			_quotient = (ds->data[ni*ds->d+di] - cfg->bound[di*2]) / cfg->inter_len[di];
+			if(VAQuantizeToBin == cfg->_qtype){	// norm quantization type: va-file
+				pos = floor(_quotient);
+				/* in case of the up-bound value */
+				if(pos > _full_index){
+					pos = _full_index;
+				}
+			}else if(VAQuantizeToCenter == cfg->_qtype){	// quantize into bin centers
+				pos = round(_quotient);
+			}else{
+				ASSERTINFO(true, "insupported quantize type");
+			}
             cfg->code[ni*cfg->d+di] = pos;
         }
     }
 }
+
+int *VA_Export_Encode(const VAConfig *cfg, const fDataSet *ds){
+	ASSERTINFO(cfg == NULL || cfg->nbit <= 0 || cfg->n <= 0 || cfg->inter_len == NULL || cfg->bound == NULL || ds == NULL || ds->n <= 0 || ds->d <= 0 || ds->data ==NULL, "IPP");
+	int n = ds->n;
+	int d = ds->d;
+
+	int *code = ivec_new(n*d);
+	int ni, di;
+	int pos;
+	float _quotient;
+	int _full_index = (int)pow(2.0, cfg->nbit) - 1;
+
+	for(ni = 0; ni < n; ni++)
+	{
+		/// for a data point
+		for(di = 0; di < d; di++)
+		{
+			/// for a certain dimension
+			_quotient = (ds->data[ni*d+di] - cfg->bound[di*2]) /     cfg->inter_len[di];
+			if(VAQuantizeToBin == cfg->_qtype){ // norm quantization     type: va-file
+				pos = floor(_quotient);
+				/* in case of the up-bound value */
+				if(pos > _full_index){
+					pos = _full_index;
+				}
+			}else if(VAQuantizeToCenter == cfg->_qtype){    // quant    ize into bin centers
+				pos = round(_quotient);
+			}else{
+				ASSERTINFO(true, "insupported quantize type");
+			}
+			code[ni*d+di] = pos;
+		}
+	}
+	return code;
+}
+
+
 /// write a va-file index structure into files
 void VA_IndexIntoFile(const VAConfig *cfg, const char *indexfolder, const char *dsname)
 {
@@ -118,7 +168,7 @@ void VA_IndexIntoFile(const VAConfig *cfg, const char *indexfolder, const char *
 	}
 
     /// write the config file: n,d,boundaries, text-format
-    sprintf(filename, "%s/%s/%d.config", indexfolder, dsname, cfg->nbit);
+    sprintf(filename, "%s/%s/b%d_qt%d.config", indexfolder, dsname, cfg->nbit, cfg->_qtype);
     fp = open_file(filename, "w");
     fprintf(fp, "%d %d\n", cfg->n, cfg->d);
     for(di = 0; di < cfg->d; di++)
@@ -128,42 +178,44 @@ void VA_IndexIntoFile(const VAConfig *cfg, const char *indexfolder, const char *
     fclose(fp);
 
     /// write the code file: nxd code, binary-format
-    sprintf(filename, "%s/%s/%d.vafile", indexfolder, dsname, cfg->nbit);
+    sprintf(filename, "%s/%s/b%d_qt%d.vafile", indexfolder, dsname, cfg->nbit, cfg->_qtype);
     fp = open_file(filename, "wb");
     fwrite(cfg->code, sizeof(int), cfg->d*cfg->n, fp);
     fclose(fp);
 }
-bool VA_CheckExistsIndex(const char *indexfolder, const char *dsname, int b){
+bool VA_CheckExistsIndex(const char *indexfolder, const char *dsname, int b, int _qtype){
 	char	filename[255];
 	/// check the config file
-	sprintf(filename, "%s/%s/%d.config", indexfolder, dsname, b);
+	sprintf(filename, "%s/%s/b%d_qt%d.config", indexfolder, dsname, b, _qtype);
 	if(-1 == access(filename, F_OK)){
 		return false;
 	}else{
-		sprintf(filename, "%s/%s/%d.vafile", indexfolder, dsname, b);
+		sprintf(filename, "%s/%s/b%d_qt%d.vafile", indexfolder, dsname, b, _qtype);
 		if(-1 == access(filename, F_OK)){
 			return false;
 		}
 	}
 	return true;
 }
-bool VA_IndexFromFile(VAConfig *cfg, const char *indexfolder, const char *dsname, int b){
+bool VA_IndexFromFile(VAConfig *cfg, const char *indexfolder, const char *dsname){
+
+	int b = cfg->nbit;
+	int	_qtype = cfg->_qtype;
 	/// first to make sure the index exist
-	if(!VA_CheckExistsIndex(indexfolder, dsname, b)){
+	if(!VA_CheckExistsIndex(indexfolder, dsname, b, _qtype)){
 		return false;
 	}
-	
+
 	char	filename[255];
 	int		di, temp_int;
 	FILE	*fp;
 
 	/// ok to load the index
 	// first, the config file (text format): n, d
-	cfg->nbit = b;
-	sprintf(filename, "%s/%s/%d.config", indexfolder, dsname, cfg->nbit);
+	sprintf(filename, "%s/%s/b%d_qt%d.config", indexfolder, dsname, b, _qtype);
 	fp = open_file(filename, "r");
 	fscanf(fp, "%d %d", &cfg->n, &cfg->d);
-	
+
 	// the allocate space for boundaries and interval lengths
 	cfg->inter_len = (float *)malloc(sizeof(float) * cfg->d);
 	ASSERTINFO(cfg->inter_len == NULL, "VA_IndexFromFile: failed to allocate space for interval lengths");
@@ -171,7 +223,7 @@ bool VA_IndexFromFile(VAConfig *cfg, const char *indexfolder, const char *dsname
 	ASSERTINFO(cfg->bound == NULL, "VA_IndexFromFile: failed to allocate space for boundaries");
 	// load interval lengths and boundaries
 	for(di = 0; di < cfg->d; di++)
-	{	
+	{
 		fscanf(fp, "%d %f %f %f", &temp_int, &cfg->inter_len[di], &cfg->bound[di*2], &cfg->bound[di*2+1]);
 	}
 	fclose(fp);
@@ -179,7 +231,7 @@ bool VA_IndexFromFile(VAConfig *cfg, const char *indexfolder, const char *dsname
 	/// read the codes: nxd code, binary-format
 	cfg->code = (int*)malloc(sizeof(int) * cfg->d *cfg->n);
 	ASSERTINFO(cfg->code == NULL, "VA_IndexFromFile: failed to allocate space for codes");
-	sprintf(filename, "%s/%s/%d.vafile", indexfolder, dsname, cfg->nbit);
+	sprintf(filename, "%s/%s/b%d_qt%d.vafile", indexfolder, dsname, b, _qtype);
 	fp = open_file(filename, "rb");
 	fread(cfg->code, sizeof(int), cfg->d*cfg->n, fp);
 	fclose(fp);
@@ -199,7 +251,6 @@ void VA_Search(const VAConfig *cfg, const fDataSet *qds, int nk, const char *dat
     VAElem *elem, *rough;
     int rough_len;
     DoubleIndex *candidate;
-    Heap h;
     bool stop;
     FILE *fp;
     float *x = fvec_new(d);
@@ -262,7 +313,7 @@ void VA_Search(const VAConfig *cfg, const fDataSet *qds, int nk, const char *dat
         }
 
         rough_len = 0;
-        Heap_Init(&h, nk);
+        Heap h(nk);
         for(i = 0; i < cfg->n; i++)
         {
             // VA_LowerBoundDistance(cfg, query, sdisqb, bound, i, &elem[i]);
@@ -276,7 +327,7 @@ void VA_Search(const VAConfig *cfg, const fDataSet *qds, int nk, const char *dat
             {// candidate not full yet or new lower bound not exceeds the current kmin upper bound
                 /// here, the max-heap keeps the k-th minimum upper bound
                 /// rough keeps candidates
-                MaxHeap_Insert(&h, &can_di);
+                h.max_insert(&can_di);
                 memcpy(&rough[rough_len], &elem[i], sizeof(VAElem));
                 rough_len = rough_len + 1;
             }
@@ -291,11 +342,10 @@ void VA_Search(const VAConfig *cfg, const fDataSet *qds, int nk, const char *dat
             candidate[i].val = rough[i].lb;
         }
         DI_MergeSort(candidate, 0, rough_len-1);
-        Heap_Delete(&h);
 
         /// refine knn
         i = 0;
-        Heap_Init(&h, nk);
+        h = Heap(nk);
         stop = false;
         knn_R = FLOAT_MAX;
         while(!stop)
@@ -322,7 +372,7 @@ void VA_Search(const VAConfig *cfg, const fDataSet *qds, int nk, const char *dat
 
             if(h.length < h.MaxNum || !f_bigger(can_di.val, h.elem[0].val))
             {// not full or a smaller distance
-                MaxHeap_Insert(&h, &can_di);
+                h.max_insert(&can_di);
             }
             knn_R = h.elem[0].val;
             i++;
@@ -359,7 +409,6 @@ void VA_Search(const VAConfig *cfg, const fDataSet *qds, int nk, const char *dat
     }
     free(sdisqb); sdisqb = NULL;
     free(bound); bound = NULL;
-    Heap_Delete(&h);
 }
 
 void VA_SquareInternalDiffLength(VAConfig *cfg){
@@ -547,4 +596,3 @@ float VA_LowerBoundDistance_Codes_S(const VAConfig *cfg, int ione, int iother){
 	}
 	return sum;
 }
-

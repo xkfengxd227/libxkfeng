@@ -1,0 +1,20 @@
+///--------------------------------------------
+/// \brief	this function contains necessary random number
+/// generators
+///
+/// collected by Yufei Tao
+/// modified by xkfeng [2016-3-9]
+///	remove new_uniform()
+///--------------------------------------------
+
+#ifndef RAND_H
+#define RAND_H
+//--------------------------------------------
+float gaussian(float mean, float sigma);
+double normal_pdf(float _x, float _u, float _sigma);
+double normal_cdf(float _x, float _step);
+float uniform(float _min, float _max);
+float zipf(float x1, float x2, double p);
+//--------------------------------------------
+#endif
+

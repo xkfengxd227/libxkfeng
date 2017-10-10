@@ -18,9 +18,9 @@
 #ifndef TOOLS_TYPE_H
 #define TOOLS_TYPE_H
 
-#define     DyArrayDfltExpandStep     10          /* default step length (element count) of dynamic array to expand */
+#define     DyArrayDfltExpandStep     100          /* default step length (element count) of dynamic array to expand */
 
-/** \brief A dynamic array class */
+/** \brief A dynamic array class: support insertion of a set of elements */
 typedef struct{
     int _usize;             /*< unit size of an element */
     int _max_count;         /*< the maximum count of element */
@@ -33,10 +33,13 @@ typedef struct{
  *  @param  usize       unit size
  *  @param  maxcount    max count of clement
  */
-void DyArray_Init(DyArray *arr, int usize, int maxcount);
+void DyArray_init(DyArray *arr, int usize, int maxcount);
 
 /** \brief reset the dynamic array: release space, and reset scalar values */
-void DyArray_Reset(DyArray *arr);
+void DyArray_unset(DyArray *arr);
+
+/** \brief expand to make sure the space be the specified one */
+void DyArray_PrepareEnoughSpace(DyArray *arr, int count);
 
 /** \brief  check whether the array has enough space, if not, expand until enough
  *  @param  arr         the array
@@ -50,15 +53,23 @@ void DyArray_CheckExpand(DyArray *arr, int up_range, int expdcnt);
  *  @param  i       the index of element
  *  @return pointer to the i-th element
  */
-void *DyArray_Get(const DyArray *arr, int i, int cnt);
+void *DyArray_get(const DyArray *arr, int i, int cnt);
 
-/** \brief  update the value at position i, maybe a set of values with len-length
+/** \brief  update the value from position i, maybe a set of values with cnt-length, self-define expand range: expdcnt, can be set as INT_DEFAULT, if so, use DyArrayDfltExpandStep
  *  @param  arr     the array
  *  @param  i       the begining position
  *  @param  val     value (set)
  *  @param  cnt     value count
- *  @param  expdcnt expand count
+ *  @param  expdcnt self-defile expand count
  */
-void DyArray_Set(DyArray *arr, int i, void *val, int cnt, int expdcnt);
+void DyArray_set(DyArray *arr, int i, void *val, int cnt, int expdcnt);
+
+/**
+ *	\brief	add a (set of) new element(s) to the end of the array
+ *	@param	arr		the dynamic array
+ *	@param	val		the value of new element(s)
+ *	@param	cnt		count of new element(s)
+ */
+void DyArray_add(DyArray *arr, void *val, int cnt);
 
 #endif

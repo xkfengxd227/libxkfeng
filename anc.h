@@ -1,14 +1,20 @@
 /**
- * \file hb.h
- * \brief basic operations of the HB class
+ * \file adaptive-neighbor-cluster(anc).h
+ * \brief basic operations of the Adaptive Neighbor Cluster(ANC) class
  */
-#ifndef HB_H
-#define HB_H
+#ifndef ANC_H
+#define ANC_H
 #include "common.h"
+#include "cost.h"
 #include "clustering.h"
 
-class HB : public Clustering{
+class ANC : public Clustering{
 public:
+
+	int g;								/// rank range of neighbor clusters
+										/// g=3: means the 2nd and the 3rd near cluster is choosed as neighbor cluster
+	vector<vector<int> > neighbor;		/// neighbor clusters of each cluster
+
 	/**
 	 *	inner lb distance for all points in each cluster, [K*...]
 	 * 		stored in an inverted index of [K * ...] size
@@ -19,18 +25,28 @@ public:
 	DoubleIndex			**innerLB;		
 
 
-	HB(int _nc, int _d, int _n) : Clustering(_nc, _d, _n){ 
+	ANC(int _nc, int _g, int _d, int _n) : Clustering(_nc, _d, _n){ 
+		g = _g;
 		innerLB = NULL;
 	}
-	~HB();
+	~ANC();
 
 	
+	/** estimate neighbor clusters for each cluster
+	 * return: average neighbor clusters
+	 */
+	float neighbor_cluster_estimation(const fDataSet *ds, int nth);
+
+	/**
+ 	 * average neighbor number
+	 */
+	float average_neighbor();
 	
 	/// figure out the inner distance for points in each cluster
 	void inner_lb_distance_OnePerPoint(const fDataSet *ds);
 
 	/**
-	 * \brief Store HB index structure into file
+	 * \brief Store index structure into file: neighbor cluster, inner lb, cluster(centroid, member)
 	 * @param	folder	the path to store clusters
 	 */
 	void index_into_file(const char *folder);
@@ -54,7 +70,7 @@ public:
 	 * @param 	nk	number of nns
 	 * @param	knnset	to store knn
 	 * @param	cost	the cost performance
-	 * @param 	whether use [true lower bound]
+	 * @param 	lbtype 	lowerbound type
 	 */
 	void search(const fDataSet *baseset, const fDataSet *queryset, char *folder, int nk, DoubleIndex **knnset, Cost *cost, int lb_type);
 
@@ -62,23 +78,16 @@ public:
 	/**
 	 * \brief calculate all the lower bounds between query and all clusters
 	 *		note that: lowerbound = max(dis(q,ci)) + innerLB[ci]
-	 * @param 	sortflag 	[I do not know what this is.]
+	 *					and max(dis(q,ci)) related to all neighbor clusters
 	 */
 	void lowerbound(DoubleIndex *lb, const float *query, bool sortflag);
 
 	/**
-	 * \brief calculate all the true lower bounds between query and all clusters
-	 *		note that: true lowerbound is the minimum distance between q and all member points in a cluster
-	 * @param	lb			lowerbound of each cluster (DoubleIndex)
-	 * @param 	ds 			true lb needs original data points
+	 * \brief calculate all the lower bounds between query and all clusters
+	 *		note that: lowerbound = max(cross_dis(q,ci)) + innerLB[ci]
+	 *					cross_dis(q,ci) is the distance between q and the crosspoint of qc with H
 	 */
-	void true_lowerbound(DoubleIndex *lb, const float *query, const fDataSet *ds);
-
-	/**
- 	 * 	a kind of pseudo lower bound which is the cross point of qC to H_CC'
-	 */
-	void crosspoint_lowerbound(DoubleIndex *lb, const float *query);
-
+	void lowerbound_crosspoint(DoubleIndex *lb, const float *query);
 
 	/**
 	 * \brief Load data points from cluster on disk

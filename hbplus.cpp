@@ -5,72 +5,201 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <yael/vector.h>
+extern "C"{
+  #include <yael/vector.h>
+}
 #include <assert.h>
 #include <math.h>
-#include "HBPlus.h"
+#include "hbplus.h"
 #include "common.h"
-#include "cost.h"
 #include "clustering.h"
 #include "heap.h"
 
-void HBPlus_IndexIntofile(Clustering *c, char *indexfolder, fDataSet *ds)
+HBPlus::~HBPlus(){
+    if(innerLB != NULL){
+        for(int i = 0; i < ncenter; i++){
+            FREE(innerLB[i]);
+        }
+        free(innerLB);   innerLB = NULL;
+    }
+}
+
+void HBPlus::inner_lb_distance_OnePerPoint(const fDataSet *ds)
+{
+    int i, j, nci, otheri;
+    float dis = 0;
+    float *xcenter = fvec_new(d);
+    float *ocenter = fvec_new(d);
+    float *x = fvec_new(d);
+    // distance between each centroid pair
+    float *centroid_dis_map = fvec_new_0(ncenter*ncenter);
+    innerLB = (DoubleIndex **)malloc(sizeof(DoubleIndex*)*ncenter);
+    for(i = 0; i < ncenter; i++){
+        innerLB[i] = NULL;
+    }
+
+    /// prepare distances between each two centroids
+    for(i = 0; i < ncenter; i++)
+    {
+        memcpy(xcenter, centroid+i*d, sizeof(float)*d);
+        for(j = 0; j <= i; j++)
+        {
+            memcpy(ocenter, centroid+j*d, sizeof(float)*d);
+            dis = odistance(xcenter, ocenter, d);
+            centroid_dis_map[i*ncenter+j] = dis;
+            if(i != j)
+            {
+                centroid_dis_map[j*ncenter+i] = dis;
+            }
+        }
+    }
+
+    // initialize the storing space for inner distance of each member point
+    for(nci = 0; nci < ncenter; nci++)
+    {
+        /// cnt_member_points
+        int cnt_member = member[nci].size();
+        innerLB[nci] = (DoubleIndex*)malloc(sizeof(DoubleIndex) * cnt_member);
+        for(i = 0; i < cnt_member; i++)
+        {
+            innerLB[nci][i].id = -1;
+            innerLB[nci][i].val = FLOAT_MAX;
+        }
+    }
+
+    for(nci = 0; nci < ncenter; nci++)
+    {
+        /* in each centroid */
+        memcpy(xcenter, centroid+nci*d, sizeof(float)*d);   // the current centroid
+        int cnt_member = member[nci].size();    // cnt member points
+        
+        /* for each member points */
+        for(i = 0; i < cnt_member; i++){
+            memcpy(x, ds->data+member[nci][i]*d, sizeof(float)*d);
+            
+            /* for each other centroid */
+            for(otheri = 0; otheri < ncenter; otheri++)
+            {
+                if(otheri != nci)
+                {
+                    memcpy(ocenter, centroid+otheri*d, sizeof(float)*d);
+                    dis = (odistance_square(x, ocenter, d) - odistance_square(x, xcenter, d)) / (2*centroid_dis_map[nci*ncenter+otheri]);
+                    if(f_bigger(innerLB[nci][i].val, dis))
+                    {// update using smaller distance
+                        innerLB[nci][i].val = dis;
+                        innerLB[nci][i].id = member[nci][i];          // id is the data point
+                    }
+                }
+            }
+        }
+        // sort member data points along the innerLB distance in the nci-th cluster
+        DI_MergeSort(innerLB[nci], 0, cnt_member-1);
+    }
+
+    free(centroid_dis_map); centroid_dis_map = NULL;
+    free(ocenter); ocenter = NULL;
+    free(xcenter); xcenter = NULL;
+    free(x); x = NULL;
+}
+
+void HBPlus::index_into_file(const char *folder)
 {
     char filename[255] = {'\0'};
     FILE *fp;
-    int nci, di, i;
-    int d = ds->d;
+    int nci, i;
 
-    // store the parameter of index(center, inner distance, member count)
-    sprintf(filename, "%s/%s", indexfolder, INDEX_PARA);
+    /* store clusters */
+    cluster_into_file(folder);
+
+    /* inner lower bounds */
+    sprintf(filename, "%s/%s", folder, FileInnerLB);
     fp = open_file(filename, "w");
-    for(nci = 0; nci < c->ncenter; nci++)
+    for(nci = 0; nci < ncenter; nci++)
     {
-        fprintf(fp, "%f\t%d", c->innerLB[nci][0].val, c->nassign[nci]);          // inner lowerbound, member number
-        for(di = 0; di < d; di++)
-        {                                                                   // centroids
-            fprintf(fp, "\t%f", c->centroid[nci*d+di]);
+        // member points of each cluster
+        int cnt_member = member[nci].size();
+        fprintf(fp, "%d", cnt_member);
+        for(i = 0; i < cnt_member; i++)
+        {                                                                 // centroids
+            fprintf(fp, " %d %lf", innerLB[nci][i].id, innerLB[nci][i].val);
         }
         fputc('\n', fp);
     }
     fclose(fp);
-
-    // store all clusters
-    for(nci = 0; nci < c->ncenter; nci++)
-    {
-        // the nci-th cluster
-        memset(filename, 0, 255);
-        sprintf(filename, "%s/%d%s", indexfolder, nci, CLUSTER_POXFIX);
-        fp = open_file(filename, "wb");
-        for(i = 0; i < c->nassign[nci]; i++)
-        {
-            fwrite(&c->innerLB[nci][i].id, sizeof(int), 1, fp);             // id of this data point
-            fwrite(&c->innerLB[nci][i].val, sizeof(double), 1, fp);         // distance to boundary
-            fwrite(ds->data+d*c->innerLB[nci][i].id, sizeof(float), d, fp); // this data point
-        }
-        fclose(fp);
-    }
 }
 
-void HBPlus_Search(Clustering *c, fDataSet *queryset, int m, float alpha, float *R, float *r_centroid, char *folder, int nk, DoubleIndex **knnset, Cost *cost)
+bool HBPlus::index_exists(const char *folder){
+    char    filename[255] = {'\0'};
+    bool status = true;
+
+    status &= cluster_exists(folder);   /* cluster files */
+    sprintf(filename, "%s/%s", folder, FileInnerLB);   /* inner lb file */
+    status &= file_exists(filename);
+
+    return status;
+}
+
+void HBPlus::load_index(const char *folder){
+    ASSERTINFO(folder == NULL || strlen(folder) == 0, "IPP");
+    ASSERTINFO(ncenter < 0 || d <= 0, "ncenter or d is invalid");
+    ASSERTINFO(!index_exists(folder), "index not exists or not integrated");
+
+    char filename[255] = {'\0'};
+    FILE *fp;
+    int nci, i, cnt_member;
+
+    /// load clusters
+    load_cluster(folder);
+
+    /// allocate space for data
+    innerLB = (DoubleIndex**)malloc(sizeof(DoubleIndex*)*ncenter);
+    for(nci = 0; nci < ncenter; nci++){
+        innerLB[nci] = NULL;
+    }
+
+    /// load inner lower bounds
+    sprintf(filename, "%s/%s", folder, FileInnerLB);
+    fp = open_file(filename, "r");
+    for(nci = 0; nci < ncenter; nci++)
+    {
+        // member points of each cluster
+        fscanf(fp, "%d", &cnt_member);
+
+        ASSERTINFO(cnt_member != member[nci].size(), "count of lb not match to member points, error");
+        innerLB[nci] = (DoubleIndex*)malloc(sizeof(DoubleIndex) * cnt_member);
+        ASSERTINFO(innerLB[nci] == NULL, "Failed to allocate space for inner LB");
+
+        for(i = 0; i < cnt_member; i++)
+        {
+            fscanf(fp, " %d %lf", &innerLB[nci][i].id, &innerLB[nci][i].val);
+        }
+    }
+    fclose(fp);
+}
+
+
+void HBPlus::search(const fDataSet *baseset, const fDataSet *queryset, const char *folder, 
+        int m, float alpha, float *R,
+        int nk, DoubleIndex **knnset, Cost *cost, int lb_type);
+
+
+(Clustering *c, fDataSet *queryset, int m, float alpha, float *R, float *r_centroid, char *folder, int nk, DoubleIndex **knnset, Cost *cost)
 {
-    char filename[256];
-    int d = queryset->d,
-        nq = queryset->n,
-        qi, i, set_i;
-    int cid, point_num;
-    float knn_R;
-    float *set;
-    int *set_id;
-    int set_num;
-    float *set_vector = NULL;
-    float *query = fvec_new(d);
+    char    filename[256];
+    int     nq = queryset->n,
+            qi, i, set_i;
+    int     cid, point_num;
+    float   knn_R;
+    float   *set;
+    int     *set_id;
+    int     set_num;
+    float   *set_vector = NULL;
+    float   *query = fvec_new(d);
     DoubleIndex candidate;
     DoubleIndex *lowerbound = (DoubleIndex*)malloc(sizeof(DoubleIndex)*c->ncenter);
                                                                 // lower bounds between query and all centers
     Cost costi;
     struct timeval tvb, tve, tvb_lb, tve_lb, tvb_io, tve_io;
-    Heap heap;
     for(qi = 0; qi < nq; qi++)
     {
         /// initialize the cost recorder
@@ -91,7 +220,7 @@ void HBPlus_Search(Clustering *c, fDataSet *queryset, int m, float alpha, float 
         set_vector = fvec_new(d);
         knn_R = FLOAT_MAX;
         i = 0;
-        Heap_Init(&heap, nk);
+        Heap heap(nk);
         while(i < c->ncenter)
         {
             cid = lowerbound[i].id;
@@ -118,7 +247,7 @@ void HBPlus_Search(Clustering *c, fDataSet *queryset, int m, float alpha, float 
                 candidate.val = odistance(query, set_vector, d);
                 if(heap.length < heap.MaxNum || f_bigger(heap.elem[0].val, candidate.val))
                 {// heap is not full or a smaller candidate
-                    MaxHeap_Insert(&heap, &candidate);
+                    heap.max_insert(&candidate);
                 }
             }
             knn_R = heap.elem[0].val;
@@ -137,7 +266,6 @@ void HBPlus_Search(Clustering *c, fDataSet *queryset, int m, float alpha, float 
 
         /// sum new cost
         CostCombine(cost, &costi);
-        Heap_Delete(&heap);
     }
 
     CostMultiply(cost, 1/(float)nq);
@@ -184,7 +312,6 @@ void HBPlus_LowerBound(DoubleIndex *lowerbound, const float *query, const float 
     /// 3. for each cluster, figure out the lower bound distance
     lowerbound[0].id = qcsdis[0].id;
     lowerbound[0].val = 0;
-    Heap heap;
     DoubleIndex di;
     for(i = 1; i < ncenter; i++)
     {
@@ -208,7 +335,7 @@ void HBPlus_LowerBound(DoubleIndex *lowerbound, const float *query, const float 
         }
         else
         {// seperate bounds exceeds T
-            Heap_Init(&heap, T);
+            Heap heap(T);
             for(j = 0; j < i; j++)
             {
                 // estimate the q H distance
@@ -218,7 +345,7 @@ void HBPlus_LowerBound(DoubleIndex *lowerbound, const float *query, const float 
                                 / (2*centroid_distance_map[ci*ncenter+cj]);
                 if(j < T || f_bigger(di.val, heap.elem[0].val))
                 {// insert a larger value
-                    MinHeap_Insert(&heap, &di);
+                    heap.min_insert(&di);
                 }
             }
             for(j = 0; j < T; j++)
@@ -234,8 +361,6 @@ void HBPlus_LowerBound(DoubleIndex *lowerbound, const float *query, const float 
             }
             lowerbound[i].id = ci;
             lowerbound[i].val = max;
-
-            Heap_Delete(&heap);
         }
 
     }
@@ -276,7 +401,7 @@ int HBPlus_ClusterFromFile(const char *filename, int num, int d, float *set, int
     return i;
 }
 
-void HBPlus_GenerateRotate(float *R, int m, int d)
+void HBPlus::generate_rotation(float *R, int m, int d)
 {
     float constant = sqrt(3.0);
     int i = 0;
