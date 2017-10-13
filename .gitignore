@@ -8,3 +8,4 @@ Makefile
 # ignore test folders
 factory/
 index/
+demo/
