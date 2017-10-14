@@ -1,0 +1,168 @@
+------ color K-50 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9997	85.0104	38	7	10049	833	175	0	659	15.800000
+------ color K-100 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9998	89.0886	32	10	7315	758	321	0	438	16.389999
+------ color K-150 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9996	90.8234	32	13	6152	1055	694	0	362	17.160000
+------ color K-200 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9996	91.6005	33	16	5631	865	553	0	313	17.035000
+------ color K-250 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99985	92.3285	34	18	5143	966	681	0	286	17.056000
+------ color K-300 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99985	92.6626	36	21	4919	1096	826	0	271	17.120001
+------ color K-350 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	92.937	37	23	4735	1213	949	0	265	16.851429
+------ color K-400 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9997	93.2786	40	26	4506	1372	1124	0	248	17.045000
+------ color K-450 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	93.4218	41	28	4410	1404	1162	0	243	16.299999
+------ color K-500 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	93.6366	44	31	4266	1502	1270	0	233	16.458000
+------ color K-550 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9998	93.8052	45	33	4153	1824	1586	0	239	16.107273
+------ color K-600 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99985	94.0245	47	35	4006	1782	1561	0	222	15.826667
+------ color K-650 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9997	93.9573	49	37	4051	1916	1678	0	238	15.695385
+------ color K-700 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99985	94.1662	52	40	3911	2008	1783	0	225	15.651428
+------ color K-750 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	94.2258	54	42	3871	2059	1842	0	218	15.212000
+------ color K-800 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	94.3974	55	44	3756	2229	2013	0	216	15.255000
+------ color K-850 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9998	94.4988	56	45	3688	2437	2234	0	203	14.963530
+------ color K-900 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	94.5182	60	49	3675	2352	2152	0	200	14.892222
+------ color K-950 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	94.5913	62	51	3626	2418	2220	0	198	14.604211
+------ color K-1000 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	94.642	64	53	3592	2572	2369	0	203	14.487000
+------ color K-1500 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	94.9493	86	76	3386	3442	3237	0	205	12.937333
+------ color K-2000 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9998	95.0701	111	101	3305	4270	4073	0	197	11.577500
+------ color K-2500 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	95.1044	145	135	3282	4859	4652	0	207	10.481200
+------ color K-3000 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	94.9299	182	172	3399	5745	5524	0	222	9.683666
+------ color K-3500 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	94.8732	215	205	3437	6055	5824	0	232	8.913143
+------ color K-4000 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	94.6763	258	247	3569	6473	6238	0	236	8.324250
+------ color K-4500 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	94.457	308	297	3716	7077	6815	0	262	7.814445
+------ color K-5000 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	94.0901	379	367	3962	7974	7674	0	300	7.267800
+------ color K-50 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99965	86.1724	34	6	9270	764	201	0	563	20.719999
+------ color K-100 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99935	88.8514	33	10	7474	766	345	0	421	21.160000
+------ color K-150 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99965	90.5221	32	13	6354	878	526	0	352	22.020000
+------ color K-200 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99975	91.6244	33	16	5615	1007	693	0	315	22.740000
+------ color K-250 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9997	92.2807	34	18	5175	1137	850	0	288	22.511999
+------ color K-300 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99985	92.6074	36	21	4956	1316	1038	0	278	22.306667
+------ color K-350 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9998	93.0847	37	23	4636	1448	1186	0	262	22.325714
+------ color K-400 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	93.3905	38	25	4431	1587	1337	0	250	22.032499
+------ color K-450 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9998	93.5934	41	28	4295	1728	1486	0	242	21.866667
+------ color K-500 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9997	93.8663	42	30	4112	1847	1615	0	232	21.664000
+------ color K-550 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	94.0543	44	32	3986	2077	1845	0	233	21.354546
+------ color K-600 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99975	94.1766	46	34	3904	2175	1948	0	227	21.011667
+------ color K-650 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	94.2631	49	37	3846	2364	2144	0	220	21.396923
+------ color K-700 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9998	94.4585	49	38	3715	2494	2271	0	224	21.001429
+------ color K-750 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99985	94.4973	51	40	3689	2729	2511	0	218	20.446667
+------ color K-800 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99975	94.5928	53	42	3625	2938	2699	0	239	20.495001
+------ color K-850 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99975	94.651	55	44	3586	2984	2730	0	255	20.411764
+------ color K-900 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	94.724	57	46	3537	3228	2987	0	242	20.111111
+------ color K-950 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99985	94.8001	58	48	3486	3077	2857	0	220	19.914738
+------ color K-1000 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9998	94.8449	60	50	3456	3101	2894	0	207	19.582001
+------ color K-1500 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99975	95.349	77	68	3118	4481	4284	0	197	18.260666
+------ color K-2000 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	95.5564	98	89	2979	5661	5458	0	203	16.777000
+------ color K-2500 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	95.6444	120	111	2920	6829	6637	0	192	15.645600
+------ color K-3000 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	95.7637	139	131	2840	7489	7303	0	186	14.705000
+------ color K-3500 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	95.7622	164	156	2841	8341	8138	0	204	13.798285
+------ color K-4000 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	95.8353	181	173	2792	9016	8821	0	196	13.006750
+------ color K-4500 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	95.7697	217	209	2836	9983	9772	0	212	12.387111
+------ color K-5000 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	95.7488	250	242	2850	10997	10760	0	237	11.727400

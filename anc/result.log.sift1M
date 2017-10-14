@@ -1,0 +1,134 @@
+------ sift1M K-1000 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	11.7624	11917	888	882376	210523	6751	0	203772	75.213997
+------ sift1M K-1000 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	64.3202	4839	380	356798	113436	24600	0	88837	75.213997
+------ sift1M K-1000 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	65.2771	4707	367	347229	109967	28826	0	81141	95.348999
+------ sift1M K-1000 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	13.6083	11665	867	863917	211171	8431	0	202740	95.348999
+------ sift1M K-20 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	53.622	5807	10	463780	125742	180	0	125562	12.500000
+------ sift1M K-40 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99985	54.8304	5665	19	451696	119928	350	0	119578	19.174999
+------ sift1M K-60 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	56.9444	5408	27	430556	107372	563	0	106810	24.333334
+------ sift1M K-80 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	56.9728	5414	36	430272	103365	821	0	102545	28.612499
+------ sift1M K-100 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99985	57.7426	5325	43	422574	101708	1134	0	100574	32.919998
+------ sift1M K-200 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	59.6104	5132	84	403896	97381	2925	0	94457	46.055000
+------ sift1M K-400 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	62.1339	4892	159	378661	97346	7704	0	89642	61.497501
+------ sift1M K-600 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	63.1445	4839	233	368555	99325	12733	0	86593	68.303337
+------ sift1M K-800 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	64.5709	4730	302	354291	100276	17764	0	82513	73.029999
+------ sift1M K-1000 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	64.2518	4848	380	357482	106686	22908	0	83778	75.915001
+------ sift1M K-2000 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	64.7154	5186	776	352846	128235	45464	0	82772	74.485497
+------ sift1M K-4000 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	63.9219	6159	1650	360781	162689	78944	0	83745	63.818001
+------ sift1M K-6000 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99985	63.362	7156	2577	366380	188202	103614	0	84588	53.878502
+------ sift1M K-8000 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	62.5417	8268	3586	374583	204349	118396	0	85954	46.984001
+------ sift1M K-10000 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	61.7321	9368	4585	382679	224453	136022	0	88432	42.057201
+
+
+------ sift1M K-20 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	53.5785	5812	10	464215	121321	193	0	121128	13.050000
+------ sift1M K-40 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	55.6887	5556	18	443113	112333	397	0	111937	21.125000
+------ sift1M K-60 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99985	56.866	5418	27	431340	109493	624	0	108870	27.033333
+------ sift1M K-80 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	57.5261	5344	35	424739	104235	916	0	103320	32.349998
+------ sift1M K-100 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	58.9674	5171	42	410326	98753	1245	0	97508	36.669998
+------ sift1M K-200 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	64.9793	4449	72	350207	85058	3302	0	81757	52.674999
+------ sift1M K-400 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	64.2862	4613	149	357138	91000	8582	0	82419	72.677498
+------ sift1M K-600 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	65.1822	4567	215	348178	95782	15149	0	80633	83.306664
+------ sift1M K-800 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	65.5322	4597	289	344678	102281	21704	0	80577	90.097504
+------ sift1M K-1000 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	65.2725	4707	367	347275	107942	28080	0	79863	96.255997
+------ sift1M K-2000 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	66.0339	4980	735	339661	137710	59481	0	78230	101.714996
+------ sift1M K-4000 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	65.4392	5881	1561	345608	191352	111352	0	80000	91.961250
+------ sift1M K-6000 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	64.8078	6823	2424	351922	235480	154098	0	81382	82.153831
+------ sift1M K-8000 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	64.2634	7796	3329	357366	261365	179374	0	81991	73.306122
+------ sift1M K-10000 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	63.9513	8749	4243	360487	291122	207953	0	83169	65.807503
+------ sift1M K-20 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	26.585	9191	15	734150	199750	139	0	199611	12.500000
+------ sift1M K-40 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99985	22.5143	9716	31	774857	206935	196	0	206740	19.174999
+------ sift1M K-60 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	19.4832	10112	48	805168	203431	263	0	203168	24.333334
+------ sift1M K-80 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	17.8411	10334	65	821589	197689	343	0	197346	28.612499
+------ sift1M K-100 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	16.4345	10528	83	835655	200915	436	0	200480	32.919998
+------ sift1M K-200 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	13.2637	11015	173	867363	204115	956	0	203160	46.055000
+------ sift1M K-400 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	14.0054	11094	345	859946	204534	2301	0	202233	61.497501
+------ sift1M K-600 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	12.6649	11445	529	873351	209165	3752	0	205413	68.303337
+------ sift1M K-800 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	12.7641	11605	701	872359	208703	5324	0	203379	73.029999
+------ sift1M K-1000 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99985	11.5785	11941	889	884215	214449	6896	0	207554	75.915001

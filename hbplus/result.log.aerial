@@ -1,0 +1,184 @@
+------ aerial K-2000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	95.9416	142	77	11139	412238	409560	0	2679	
+
+------ aerial K-3000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	96.2717	167	107	10233	947201	944019	0	3183	
+
+------ aerial K-4000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	96.4972	192	136	9614	1671577	1667807	0	3770	
+
+------ aerial K-5000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99995	96.636	216	162	9233	2870866	2865911	0	4955	
+
+------ aerial K-100 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	83.0503	286	13	46521	5633	374	0	5260	
+
+------ aerial K-200 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	85.9818	249	23	38475	5838	1415	0	4423	
+
+------ aerial K-300 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	87.3459	236	32	34731	7197	3126	0	4071	
+
+------ aerial K-400 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	88.2262	230	40	32315	9377	5513	0	3864	
+
+------ aerial K-500 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	88.8762	228	49	30531	12283	8569	0	3714	
+
+------ aerial K-600 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	89.2901	229	57	29395	15942	12290	0	3653	
+
+------ aerial K-700 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	89.5706	234	66	28625	20364	16720	0	3645	
+
+------ aerial K-800 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	89.8501	237	74	27858	25496	21865	0	3631	
+
+------ aerial K-900 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	90.1233	240	81	27108	31206	27605	0	3602	
+
+------ aerial K-1000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	90.3325	245	89	26534	37768	34152	0	3616	
+
+------ aerial K-2000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	91.5261	297	161	23258	147387	143243	0	4145	
+
+------ aerial K-3000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	91.8995	363	233	22233	338016	333365	0	4652	
+
+------ aerial K-4000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	92.2558	426	301	21255	597063	591883	0	5180	
+
+------ aerial K-5000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	92.473	484	363	20659	894120	888485	0	5636	
+
+------ aerial K-100 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	92.5378	125	5	20481	18945	16561	0	2384	
+
+------ aerial K-200 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	95.1994	84	7	13176	18323	16688	0	1636	
+
+------ aerial K-300 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	96.3307	67	8	10071	18070	16730	0	1340	
+
+------ aerial K-400 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	96.9905	57	9	8260	18737	17472	0	1266	
+
+------ aerial K-500 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	97.5195	50	10	6808	18006	16907	0	1100	
+
+------ aerial K-600 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	97.776	45	10	6104	17926	16860	0	1067	
+
+------ aerial K-700 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	98.0114	43	11	5458	17977	16920	0	1058	
+
+------ aerial K-800 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	98.1972	41	12	4948	18007	16949	0	1058	
+
+------ aerial K-900 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	98.3302	39	13	4583	18040	16964	0	1077	
+
+------ aerial K-1000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	98.4654	37	13	4212	18093	17000	0	1094	
+
+------ aerial K-2000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	99.0567	32	17	2589	18786	17283	0	1504	
+
+------ aerial K-3000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	99.2757	31	20	1988	19380	17403	0	1978	
+
+------ aerial K-4000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	99.3857	32	23	1686	20121	17599	0	2523	
+
+------ aerial K-5000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	99.4593	33	25	1484	20882	17817	0	3066	
+
+------ aerial K-100 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.9992	89.1323	183	8	29828	4975	1574	0	3401	
+
+------ aerial K-200 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.9997	91.6488	148	14	22921	8922	6235	0	2688	
+
+------ aerial K-300 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99985	92.8111	134	18	19731	16451	14052	0	2400	
+
+------ aerial K-400 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.9998	93.5292	126	22	17760	27090	24840	0	2250	
+
+------ aerial K-500 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99985	94.0339	122	26	16375	40788	38643	0	2145	
+
+------ aerial K-600 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.9997	94.3344	121	30	15550	58001	55889	0	2112	
+
+------ aerial K-700 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99985	94.576	121	34	14887	77853	75752	0	2102	
+
+------ aerial K-800 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.9999	94.8281	120	37	14195	103071	100976	0	2095	
+
+------ aerial K-900 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	94.9713	122	41	13802	127675	125567	0	2108	
+
+------ aerial K-1000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.9997	95.1163	123	45	13404	156591	154469	0	2123	
+
+------ aerial K-2000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	95.9416	142	77	11139	615482	613007	0	2475	
+
+------ aerial K-3000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	96.2717	167	107	10233	1394686	1391541	0	3146	
+
+------ aerial K-4000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	96.4972	192	136	9614	2468881	2465231	0	3651	
+
+------ aerial K-5000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99995	96.636	216	162	9233	3845852	3841737	0	4116	
+

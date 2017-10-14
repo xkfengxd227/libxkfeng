@@ -1,0 +1,114 @@
+------ aerial K-100 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	89.0693	184	8	30001	5371	556	0	4816	13.890000
+------ aerial K-200 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99965	91.6805	148	14	22834	3923	1110	0	2813	17.270000
+------ aerial K-300 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99965	92.7903	134	18	19788	3840	1390	0	2450	19.016666
+------ aerial K-400 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	93.4334	128	22	18023	4074	1899	0	2176	20.795000
+------ aerial K-500 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99985	94.0058	122	26	16452	4403	2427	0	1976	21.563999
+------ aerial K-600 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	94.228	123	30	15842	4931	3028	0	1904	22.350000
+------ aerial K-700 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9998	94.5326	122	34	15006	6116	4171	0	1945	23.172857
+------ aerial K-800 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	94.7625	122	38	14375	6263	4468	0	1795	23.545000
+------ aerial K-900 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	94.9101	124	42	13970	6393	4720	0	1674	23.867777
+------ aerial K-1000 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	95.0475	125	46	13593	7115	5485	0	1630	24.184999
+------ aerial K-2000 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	95.8013	147	80	11524	12263	10881	0	1382	24.542999
+------ aerial K-3000 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	96.0567	179	116	10823	18154	16829	0	1325	23.588333
+------ aerial K-4000 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	96.2123	209	148	10396	21231	19935	0	1296	22.055500
+------ aerial K-5000 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	96.24	250	190	10320	25450	24145	0	1305	20.608000
+------ aerial K-100 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99965	88.9771	185	8	30254	4379	519	0	3861	17.000000
+------ aerial K-200 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	91.5916	149	14	23078	5321	1840	0	3481	20.424999
+------ aerial K-300 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	92.7812	134	18	19813	3919	1536	0	2383	23.033333
+------ aerial K-400 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9996	93.4895	127	22	17869	4252	2110	0	2143	24.197500
+------ aerial K-500 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99965	93.9315	123	26	16656	4761	2775	0	1987	26.024000
+------ aerial K-600 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9998	94.3148	121	30	15604	5511	3649	0	1863	26.993334
+------ aerial K-700 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	94.588	121	34	14854	6038	4260	0	1779	27.620001
+------ aerial K-800 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	94.807	120	37	14253	6604	4901	0	1703	28.667500
+------ aerial K-900 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99985	94.9516	122	41	13856	7185	5516	0	1670	29.215555
+------ aerial K-1000 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9998	95.0948	124	45	13463	7926	6316	0	1611	29.541000
+------ aerial K-2000 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	95.8895	144	78	11282	14690	13321	0	1369	31.733000
+------ aerial K-3000 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	96.1726	171	110	10505	22487	21202	0	1286	31.700666
+------ aerial K-4000 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	96.3496	200	142	10019	27640	26403	0	1237	30.929501
+------ aerial K-5000 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	96.448	231	174	9749	34173	32940	0	1233	29.643400
+------ aerial K-100 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	82.8437	290	14	47088	5746	197	0	5550	13.890000
+------ aerial K-200 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	85.1875	264	25	40655	5799	1039	0	4761	17.270000
+------ aerial K-300 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	86.552	252	35	36910	4862	526	0	4336	19.016666
+------ aerial K-400 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	87.2946	250	45	34872	4784	715	0	4069	20.795000
+------ aerial K-500 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	87.7653	251	54	33580	4813	890	0	3924	21.563999
+------ aerial K-600 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	87.9088	261	66	33186	5081	1229	0	3852	22.350000
+------ aerial K-700 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	88.2029	266	76	32379	5230	1413	0	3817	23.172857
+------ aerial K-800 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	88.3468	274	86	31984	5174	1469	0	3706	23.545000
+------ aerial K-900 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	88.3992	285	98	31840	5442	1720	0	3723	23.867777
+------ aerial K-1000 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	88.5151	294	109	31522	5776	2088	0	3688	24.184999

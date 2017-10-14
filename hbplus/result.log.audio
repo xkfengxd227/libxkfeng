@@ -1,0 +1,176 @@
+------ audio K-200 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.9799	5.39644	1200	190	50506	26194	9099	0	17096	
+
+------ audio K-200 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99755	36.1118	811	129	34108	20592	9083	0	11509	
+
+------ audio K-200 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	61.8578	483	76	20363	20643	13633	0	7010	
+
+------ audio K-50 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99995	52.2824	533	24	25475	13812	1171	0	12641	
+
+------ audio K-100 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	58.297	487	42	22264	10956	3329	0	7628	
+
+------ audio K-150 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	60.4361	481	59	21122	14543	7466	0	7077	
+
+------ audio K-200 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	61.8578	483	76	20363	20132	13271	0	6862	
+
+------ audio K-250 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	63.5323	480	91	19469	27395	20753	0	6643	
+
+------ audio K-300 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	64.688	483	106	18852	36419	29981	0	6438	
+
+------ audio K-350 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	65.5197	489	121	18408	46919	40703	0	6216	
+
+------ audio K-400 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	66.2746	495	135	18005	59295	53217	0	6078	
+
+------ audio K-450 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	66.8459	503	149	17700	73549	67525	0	6024	
+
+------ audio K-500 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	67.3291	511	163	17442	89368	83414	0	5955	
+
+------ audio K-550 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	67.8517	519	176	17163	106961	101069	0	5892	
+
+------ audio K-600 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	68.1533	529	189	17002	126370	120542	0	5828	
+
+------ audio K-650 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	68.4811	542	206	16827	147245	141443	0	5802	
+
+------ audio K-700 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	68.9231	547	216	16591	169853	164150	0	5703	
+
+------ audio K-750 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	69.3746	554	227	16350	194339	188679	0	5661	
+
+------ audio K-800 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	69.457	569	243	16306	220366	214735	0	5631	
+
+------ audio K-850 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	70.0433	574	255	15993	248298	242692	0	5607	
+
+------ audio K-900 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	70.1594	581	263	15931	277932	272313	0	5620	
+
+------ audio K-950 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	70.4441	595	280	15779	309226	303572	0	5655	
+
+------ audio K-1000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	70.6483	605	292	15670	355361	349283	0	6079	
+
+------ audio K-50 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99995	52.2824	533	24	25475	9328	836	0	8493	
+
+------ audio K-100 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	58.297	487	42	22264	10869	3320	0	7549	
+
+------ audio K-150 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	60.4361	481	59	21122	14543	7465	0	7078	
+
+------ audio K-200 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	61.8578	483	76	20363	20107	13256	0	6852	
+
+------ audio K-250 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	63.5323	480	91	19469	27356	20733	0	6624	
+
+------ audio K-300 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	64.688	483	106	18852	36291	29872	0	6420	
+
+------ audio K-350 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	65.5197	489	121	18408	47012	40729	0	6283	
+
+------ audio K-400 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	66.2746	495	135	18005	59382	53287	0	6096	
+
+------ audio K-450 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	66.8459	503	149	17700	73619	67603	0	6017	
+
+------ audio K-500 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	67.3291	511	163	17442	89441	83476	0	5965	
+
+------ audio K-550 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	67.8517	519	176	17163	107050	101162	0	5888	
+
+------ audio K-600 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	68.1533	529	189	17002	126211	120381	0	5830	
+
+------ audio K-650 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	68.4811	542	206	16827	147277	141496	0	5782	
+
+------ audio K-700 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	68.9231	547	216	16591	191930	184998	0	6932	
+
+------ audio K-750 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	69.3746	554	227	16350	221142	214321	0	6821	
+
+------ audio K-800 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	69.457	569	243	16306	223455	217597	0	5858	
+
+------ audio K-850 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	70.0433	574	255	15993	248718	243060	0	5658	
+
+------ audio K-900 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	70.1594	581	263	15931	277782	272179	0	5603	
+
+------ audio K-950 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	70.4441	595	280	15779	308937	303324	0	5613	
+
+------ audio K-1000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	70.6483	605	292	15670	341948	336384	0	5565	
+
+------ audio K-500 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	46.1311	840	265	28759	34285	25021	0	9264	
+

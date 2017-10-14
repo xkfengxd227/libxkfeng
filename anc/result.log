@@ -1,0 +1,28 @@
+------ color K-50 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	72.8073	68	12	18230	1401	316	0	1085	
+
+------ color K-200 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	79.3064	81	38	13873	8119	6864	0	1256	
+
+------ color K-200 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	79.3914	82	39	13816	8145	6863	0	1282	
+
+------ color K-200 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	79.4377	81	38	13785	967	224	0	744	
+
+------ color K-200 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	79.2303	83	40	13924	967	225	0	743	
+
+------ color K-200 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	79.2079	83	40	13939	980	232	0	748	
+
+------ color K-500 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	80.4803	138	98	13086	1196	517	0	680	
+

@@ -1,11 +1,13 @@
-# ignore temp files
+# ignore temp files, object file, main
 *~
+*.o
+main
 
-# ignore main.c and Makefile, they are used to test
-main.c
-Makefile
+# ignore txt file
+*.txt
 
 # ignore test folders
-factory/
-index/
-demo/
+adaptive_neighbor_cluster_estimation/index
+anc/index
+treenng/index
+hb/index

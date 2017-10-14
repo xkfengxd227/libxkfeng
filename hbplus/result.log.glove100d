@@ -1,0 +1,12 @@
+------ glove100d K-1000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	93.5031	799	25	77477	135598	120670	0	14929	
+
+------ glove100d K-1000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	0.0465393	12810	891	1191959	280614	55696	0	224918	
+
+------ glove100d K-1000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	0.916386	12664	849	1181586	447498	225578	0	221920	
+

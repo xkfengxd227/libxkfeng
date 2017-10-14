@@ -1,0 +1,448 @@
+--------------------------------------------------
+sift1M -bf 100 -h 2 -g 10 -k 1 -pk 1
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.08289	0.371	0.371	0.002483	0	942	7
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 158
+--------------------------------------------------
+sift1M -bf 100 -h 2 -g 10 -k 10 -pk 5
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.03305	0.594	0.5363	0.002879	0	4699	35
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 555
+--------------------------------------------------
+sift1M -bf 100 -h 2 -g 10 -k 20 -pk 10
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.02186	0.715	0.6162	0.003351	0	7554	57
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 992
+--------------------------------------------------
+sift1M -bf 100 -h 2 -g 10 -k 30 -pk 15
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.01732	0.767	0.664967	0.003779	0	9872	75
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 1369
+--------------------------------------------------
+sift1M -bf 100 -h 2 -g 10 -k 40 -pk 20
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.01474	0.802	0.69735	0.004205	0	11888	91
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 1726
+--------------------------------------------------
+sift1M -bf 100 -h 2 -g 10 -k 50 -pk 25
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.01281	0.831	0.72448	0.004658	0	13721	106
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 2068
+--------------------------------------------------
+sift1M -bf 100 -h 2 -g 10 -k 60 -pk 30
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.01127	0.856	0.745017	0.005109	0	15355	119
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 2390
+--------------------------------------------------
+sift1M -bf 100 -h 2 -g 10 -k 70 -pk 35
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.01023	0.873	0.7614	0.005585	0	16902	131
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 2682
+--------------------------------------------------
+sift1M -bf 100 -h 2 -g 10 -k 80 -pk 40
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.0093	0.886	0.776863	0.006084	0	18364	143
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 2971
+--------------------------------------------------
+sift1M -bf 100 -h 2 -g 10 -k 90 -pk 45
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.00861	0.903	0.789733	0.006586	0	19762	154
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 3256
+--------------------------------------------------
+sift1M -bf 100 -h 2 -g 10 -k 100 -pk 50
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.0079	0.915	0.80099	0.007161	0	21109	165
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 3533
+--------------------------------------------------
+sift1M -bf 100 -h 2 -g 1 -k 1 -pk 1
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.1029	0.295	0.295	0.002428	0	120	1
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 120
+--------------------------------------------------
+sift1M -bf 100 -h 2 -g 2 -k 1 -pk 1
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.0985	0.311	0.311	0.002432	0	203	1
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 127
+--------------------------------------------------
+sift1M -bf 100 -h 2 -g 10 -k 1 -pk 1
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.08289	0.371	0.371	0.002472	0	942	7
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 158
+--------------------------------------------------
+sift1M -bf 100 -h 2 -g 5 -k 1 -pk 1
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.09074	0.341	0.341	0.002467	0	485	3
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 141
+--------------------------------------------------
+sift1M -bf 100 -h 2 -g 1 -k 1 -pk 1
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.1029	0.295	0.295	0.002426	0	120	1
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 120
+--------------------------------------------------
+sift1M -bf 100 -h 2 -g 1 -k 1 -pk 1
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.1029	0.295	0.295	0.002491	0	120	1
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 120
+--------------------------------------------------
+sift1M -bf 100 -h 2 -g 2 -k 1 -pk 1
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.0985	0.311	0.311	0.002496	0	203	1
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 127
+--------------------------------------------------
+sift1M -bf 100 -h 2 -g 2 -k 1 -pk 1
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.0985	0.311	0.311	0.002454	0	204	2
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 127
+--------------------------------------------------
+color -bf 100 -h 2 -g 2 -k 100 -pk 50
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.39644	0.59	0.24347	0.00207	0	1507	153
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 358
+--------------------------------------------------
+color -bf 100 -h 2 -g 10 -k 100 -pk 50
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.20506	0.693	0.38082	0.002079	0	3709	377
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 609
+--------------------------------------------------
+color -bf 50 -h 2 -g 10 -k 100 -pk 50
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.10238	0.804	0.55461	0.002193	0	10437	286
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 615
+--------------------------------------------------
+color -bf 20 -h 2 -g 10 -k 100 -pk 50
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.04754	0.873	0.72034	0.002108	0	33165	164
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 943
+--------------------------------------------------
+color -bf 20 -h 2 -g 2 -k 100 -pk 50
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.07824	0.805	0.62648	0.001727	0	19638	93
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 601
+--------------------------------------------------
+color -bf 20 -h 2 -g 2 -k 100 -pk 1
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.15209	0.713	0.47472	0.001628	0	19398	92
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 351
+--------------------------------------------------
+color -bf 500 -h 1 -g 2 -k 100 -pk 50
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.08461	0.813	0.6097	0.001978	0	14627	101
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 460
+--------------------------------------------------
+color -bf 500 -h 1 -g 5 -k 100 -pk 50
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.0674	0.843	0.65603	0.001817	0	20954	145
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 593
+--------------------------------------------------
+color -bf 500 -h 1 -g 10 -k 100 -pk 50
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.05462	0.868	0.69459	0.001974	0	27072	189
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 743
+--------------------------------------------------
+color -bf 500 -h 1 -g 20 -k 100 -pk 50
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.04431	0.884	0.73153	0.002147	0	33650	237
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 942
+--------------------------------------------------
+color -bf 1000 -h 1 -g 20 -k 100 -pk 50
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.05574	0.886	0.68626	0.002029	0	22689	312
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 804
+--------------------------------------------------
+aerial -bf 50 -h 2 -g 2 -k 100 -pk 50
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.06607	0.693	0.53887	0.00296	0	30131	98
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 1300
+--------------------------------------------------
+gaussian64 -bf 100 -h 2 -g 2 -k 100 -pk 50
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.11986	0.047	0.02793	0.005921	0	10825	99
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 2824
+--------------------------------------------------
+gaussian64 -bf 100 -h 2 -g 5 -k 100 -pk 50
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.07921	0.136	0.07569	0.008654	0	41842	382
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 6132
+--------------------------------------------------
+sift1M -bf 100 -h 2 -g 5 -k 100 -pk 50
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.01441	0.841	0.69795	0.006476	0	12908	100
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 2845
+--------------------------------------------------
+bow -bf 2500 -h 1 -g 5 -k 100 -pk 50
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.04338	1	0.20647	0.009424	0	87404	368
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 1686
+--------------------------------------------------
+bow -bf 2500 -h 1 -g 2 -k 100 -pk 50
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.06053	1	0.13859	0.006966	0	27391	107
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 961
+--------------------------------------------------
+bow -bf 2500 -h 1 -g 10 -k 100 -pk 10
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.05515	1	0.17906	0.010135	0	140033	635
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 1691
+--------------------------------------------------
+bow -bf 2500 -h 1 -g 3 -k 100 -pk 10
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.07284	1	0.12945	0.006747	0	47865	193
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 750
+--------------------------------------------------
+bow -bf 2500 -h 1 -g 2 -k 10 -pk 5
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.04985	1	0.2143	0.003494	0	2940	12
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 305
+--------------------------------------------------
+color -bf 500 -h 1 -g 2 -k 10 -pk 50
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.04172	0.814	0.7535	0.000289	0	417	3
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 260
+--------------------------------------------------
+color -bf 500 -h 1 -g 2 -k 10 -pk 20
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.04172	0.814	0.7535	0.000264	0	417	3
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 260
+--------------------------------------------------
+color -bf 500 -h 1 -g 2 -k 100 -pk 200
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.00785	0.977	0.92307	0.000752	0	1583	11
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 1040
+--------------------------------------------------
+color -bf 500 -h 1 -g 2 -k 100 -pk 101
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.00785	0.977	0.92307	0.000781	0	1583	11
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 1040
+--------------------------------------------------
+color -bf 500 -h 1 -g 2 -k 100 -pk 300
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.00785	0.977	0.92307	0.000764	0	1583	11
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 1040
+--------------------------------------------------
+color -bf 500 -h 1 -g 2 -k 100 -pk 100
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.00785	0.977	0.92307	0.000755	0	1583	11
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 1040
+--------------------------------------------------
+color -bf 500 -h 1 -g 10 -k 100 -pk 100
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.00026	0.999	0.99548	0.001269	0	3344	23
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 1492
+--------------------------------------------------
+color -bf 500 -h 1 -g 10 -k 100 -pk 10
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.00128	0.996	0.98004	0.0012	0	3323	23
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 622
+--------------------------------------------------
+color -bf 500 -h 1 -g 2 -k 100 -pk 80
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.00934	0.974	0.91123	0.000752	0	1587	11
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 945
+--------------------------------------------------
+color -bf 500 -h 1 -g 10 -k 100 -pk 10
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.00128	0.996	0.98004	0.001186	0	3323	23
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 622
+--------------------------------------------------
+color -bf 500 -h 1 -g 2 -k 100 -pk 80
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.00981	0.978	0.90936	0.000797	0	1591	11
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+traversed points: 933
+--------------------------------------------------
+color -bf 500 -h 1 -g 10 -k 100 -pk 10
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.00129	0.996	0.98006	0.001388	0	619	23
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+loaded points: 3337
+--------------------------------------------------
+color -bf 500 -h 1 -g 10 -k 100 -pk 10
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.00129	0.996	0.98006	0.001206	0	619	23
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+loaded points: 3337
+--------------------------------------------------
+color -bf 500 -h 1 -g 2 -k 100 -pk 100
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.00801	0.982	0.92336	0.000791	0	1037	11
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+loaded points: 1591
+--------------------------------------------------
+sift1M -bf 100 -h 2 -g 2 -k 100 -pk 100
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.02956	0.704	0.53652	0.00502	0	2425	38
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+loaded points: 5012
+--------------------------------------------------
+sift1M -bf 100 -h 2 -g 2 -k 100 -pk 50
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.03716	0.666	0.47496	0.004146	0	1668	38
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+loaded points: 4962
+--------------------------------------------------
+sift1M -bf 100 -h 2 -g 10 -k 100 -pk 50
+ ratio 	 recall precision search(s) 	 cpu(s) points pages
+1.00791	0.921	0.80183	0.007161	0	3510	166
+filter 0(s), sort 0(s), refine 0(s)
+reg io 0(s), point io 0(s)
+
+loaded points: 21144

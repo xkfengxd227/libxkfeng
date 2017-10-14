@@ -1,0 +1,30 @@
+------ bow K-20 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9917	5.5617	12743	11	254651	289141	175	0	288966	7.000000
+------ bow K-40 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99215	5.4853	12763	21	254857	270912	292	0	270621	12.475000
+------ bow K-60 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99225	6.60417	12624	32	251840	262592	435	0	262157	15.166667
+------ bow K-80 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99225	6.75696	12615	44	251428	247221	1267	0	245955	19.187500
+------ bow K-100 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99185	7.4219	12538	57	249635	235366	790	0	234577	20.610001
+------ bow K-200 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9918	8.17177	12502	122	247613	212202	1894	0	210308	27.315001
+------ bow K-400 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99185	8.22368	12644	271	247473	202133	4473	0	197661	34.200001
+------ bow K-600 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9918	8.43544	12774	429	246902	202018	7015	0	195004	36.311668
+------ bow K-800 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99135	8.42914	12937	592	246919	203458	9354	0	194105	36.132500
+------ bow K-1000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9913	8.3431	13126	769	247151	205930	11496	0	194435	35.321999

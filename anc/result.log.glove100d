@@ -1,0 +1,3 @@
+------ glove100d K-1000 g-3 k-100 nq-500
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	1.2098	12694	914	1178087	260078	37500	0	222579	143.195007

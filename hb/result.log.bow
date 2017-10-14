@@ -1,0 +1,80 @@
+------ bow K-20 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99215	58.2118	5637	3	112681	256604	127874	0	128730	
+
+------ bow K-40 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99165	69.5859	4104	4	82011	214195	122409	0	91787	
+
+------ bow K-60 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99175	73.9638	3515	5	70206	218444	136636	0	81809	
+
+------ bow K-80 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99175	77.6779	3015	6	60191	210524	139910	0	70614	
+
+------ bow K-100 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99165	80.5443	2630	7	52462	179429	123477	0	55952	
+
+------ bow K-200 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99135	86.6367	1811	10	36034	158444	124012	0	34432	
+
+------ bow K-400 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99215	90.9245	1237	14	24472	147398	126117	0	21282	
+
+------ bow K-600 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.9919	92.7086	1000	17	19661	138860	122509	0	16351	
+
+------ bow K-800 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.9914	93.7485	861	19	16857	143342	128781	0	14562	
+
+------ bow K-1000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.9917	94.442	769	20	14987	136647	123893	0	12754	
+
+------ bow K-20 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99205	8.70134	12319	10	246185	272289	340	0	271949	
+
+------ bow K-40 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99165	10.7422	12053	19	240682	265191	1354	0	263838	
+
+------ bow K-60 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.9917	11.4171	11972	29	238862	255037	3035	0	252002	
+
+------ bow K-80 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.992	12.4195	11846	39	236159	249844	5402	0	244443	
+
+------ bow K-100 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.9916	12.8423	11799	49	235019	252701	8671	0	244030	
+
+------ bow K-200 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.9919	14.7411	11600	106	229899	235215	33708	0	201508	
+
+------ bow K-400 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99215	16.3502	11505	227	225560	320341	135737	0	184604	
+
+------ bow K-600 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.9924	17.3022	11499	350	222993	483938	304147	0	179791	
+
+------ bow K-800 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.9914	17.6374	11586	482	222089	724872	544862	0	180011	
+
+------ bow K-1000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99205	17.9252	11675	610	221313	1031544	852643	0	178901	
+

@@ -1,0 +1,72 @@
+------ wt K-20 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9997	78.5279	727	4	57899	14677	157	0	14520	7.850000
+------ wt K-40 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99985	82.4976	595	6	47195	11347	317	0	11031	12.325000
+------ wt K-60 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	84.647	525	8	41399	10011	372	0	9640	14.866667
+------ wt K-80 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	85.872	485	9	38096	9461	518	0	8943	16.912500
+------ wt K-100 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	87.0487	446	10	34923	9023	862	0	8162	18.190001
+------ wt K-200 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	89.8998	356	16	27235	7968	1573	0	6395	22.990000
+------ wt K-400 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	91.9436	296	25	21724	8585	3482	0	5103	26.892500
+------ wt K-600 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	93.0268	268	33	18803	10098	5683	0	4416	28.473333
+------ wt K-800 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	93.5327	258	41	17439	11464	7362	0	4103	28.608749
+------ wt K-1000 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	94.0964	246	48	15919	12969	9272	0	3697	28.739000
+------ wt K-2000 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	95.2193	240	79	12891	20505	17529	0	2976	26.876499
+------ wt K-4000 g-2 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	95.9251	282	145	10988	32509	30001	0	2509	22.343500
+------ wt K-20 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	77.4113	765	4	60910	15579	163	0	15417	8.950000
+------ wt K-40 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	82.4849	596	6	47229	11408	267	0	11142	13.325000
+------ wt K-60 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	84.4824	531	8	41843	10291	529	0	9763	15.850000
+------ wt K-80 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.9999	86.2328	473	9	37123	9198	551	0	8647	18.100000
+------ wt K-100 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	87.3123	437	10	34212	8649	703	0	7946	19.490000
+------ wt K-200 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	89.8508	358	16	27367	8222	1793	0	6430	25.295000
+------ wt K-400 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+0.99995	91.948	296	25	21712	8969	3864	0	5105	30.472500
+------ wt K-600 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	92.9809	269	33	18927	10848	6424	0	4424	33.223331
+------ wt K-800 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	93.6113	256	41	17227	13042	8997	0	4045	34.563751
+------ wt K-1000 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	94.093	246	47	15928	14968	11224	0	3744	35.139999
+------ wt K-2000 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	95.2445	237	77	12823	25472	22516	0	2956	35.175999
+------ wt K-4000 g-3 k-100 nq-200
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)	avg_neighbor
+1	96.0263	268	135	10715	44241	41786	0	2456	31.563000

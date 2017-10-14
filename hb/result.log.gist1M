@@ -1,0 +1,52 @@
+------ gist1M K-20 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99985	11.49	88527	17	885100	1773506	226	0	1773280	
+
+------ gist1M K-40 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99985	12.623	87411	34	873770	1831383	844	0	1830540	
+
+------ gist1M K-60 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.9998	13.3281	86721	50	866719	1823201	1844	0	1821357	
+
+------ gist1M K-80 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99985	13.5806	86485	66	864194	1773822	3250	0	1770572	
+
+------ gist1M K-100 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99985	13.5291	86551	81	864709	1804882	5085	0	1799798	
+
+------ gist1M K-200 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99985	14.5321	85628	161	854679	1692080	20012	0	1672068	
+
+------ gist1M K-400 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.9998	15.0195	85295	315	849805	1554009	76351	0	1477658	
+
+------ gist1M K-600 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.9999	15.2692	85199	469	847308	1522585	171241	0	1351345	
+
+------ gist1M K-800 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.9998	15.4784	85150	629	845216	1631621	310618	0	1321003	
+
+------ gist1M K-1000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99975	15.625	85153	778	843750	1813464	493576	0	1319888	
+
+------ gist1M K-2000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99975	15.7296	85822	1552	842704	3210196	1964386	0	1245811	
+
+------ gist1M K-4000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.99985	15.7028	87378	3081	842972	9168521	7945080	0	1223441	
+
+------ gist1M K-8000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.9998	15.5382	90669	6208	844618	39965900	38685904	0	1279996	
+

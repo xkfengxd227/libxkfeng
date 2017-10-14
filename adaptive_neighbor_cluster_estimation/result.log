@@ -1,0 +1,199 @@
+root@xkfeng-ws:~/libxkfeng/hb# ./main -ds aerial -K 200 -h 1 -nq 200 -k 100
+hb: -ds aerial -n 274465 -d 60 -nl 100000 -K 200 -h 1 -nq 200 -k 100
+--------------before allocate space-------------
+--------------before kmeans-------------
+<><><><> kmeans / run 0 <><><><><>
+Total number of iterations: 100
+Unbalanced factor of last iteration: 2.35121
+>>> clustering, quantization error: 261.209808
+--------------test assign-------------
+--------------before extract members-------------
+total: 274465
+--------------after inner-lbdistance-------------
+
+######################## 200 clusters, 100-nn: ##########################
+data set: /home/xkfeng/research/dataset/nus_wide/aerial_base.fvecs
+n: 274465, d: 60
+------------------ HB ---------------
+accuracy:	1.000000
+IO:	248
+page:	22
+point:	38468
+total:	7335us
+	|__lb:	1482us
+	|__io:	3258us
+	|__search:	2594us
+	|__cpu:	4077us
+248	22	38468	7335	1482	3258	2594	1.000000
+root@xkfeng-ws:~/libxkfeng/hb# ./main -ds aerial -K 4096 -h 1 -nq 200 -k 100
+hb: -ds aerial -n 274465 -d 60 -nl 100000 -K 4096 -h 1 -nq 200 -k 100
+--------------before allocate space-------------
+--------------before kmeans-------------
+<><><><> kmeans / run 0 <><><><><>
+Total number of iterations: 50
+Unbalanced factor of last iteration: 1.16585
+>>> clustering, quantization error: 144.443085
+--------------test assign-------------
+--------------before extract members-------------
+total: 274465
+--------------after inner-lbdistance-------------
+
+######################## 4096 clusters, 100-nn: ##########################
+data set: /home/xkfeng/research/dataset/nus_wide/aerial_base.fvecs
+n: 274465, d: 60
+------------------ HB ---------------
+accuracy:	1.000000
+IO:	457
+page:	325
+point:	22507
+total:	600244us
+	|__lb:	595397us
+	|__io:	3163us
+	|__search:	1683us
+	|__cpu:	597081us
+457	325	22507	600244	595397	3163	1683	1.000000
+
+------ color K-10 k-100
+accu	io	page	pts	FE(%)	ttl(us)	lb(us)	io(us)	sch(us)
+0.99995	89	3	27594	58.8395	2793	5	1676	1111	
+
+------ color K-100 k-100
+accu	io	page	pts	FE(%)	ttl(us)	lb(us)	io(us)	sch(us)
+0.9999	52	15	12037	82.0451	1495	225	766	502	
+
+------ color K-100 k-100
+accu	io	page	pts	FE(%)	ttl(us)	lb(us)	io(us)	sch(us)
+0.99995	82.5447	51	15	11702	1464	228	749	487	
+
+------ color K-100 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.9999	81.9899	53	16	12074	1500	227	781	492	
+
+------ color K-100 k-10
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	88.2399	35	11	7884	1691	377	784	531	
+
+------ color K-250 k-10
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	91.3872	38	20	5774	3451	2183	864	405	
+
+------ sift1M K-1000 k-10
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+0.999	54.2385	6187	467	457615	326062	120946	104347	100770	
+
+------ color K-10 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	56.9764	94	4	28843	2901	6	1702	1194	
+
+------ color K-200 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	85.1671	59	28	9944	2013	908	673	433	
+
+------ color K-20 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	69.563	69	6	20405	2011	15	1159	839	
+
+------ color K-20 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	69.5048	68	5	20444	2050	15	1182	855	
+
+------ color K-20 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	69.9016	69	6	20178	2013	15	1143	856	
+
+------ color K-200 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	84.8941	59	28	10127	1986	872	674	441	
+
+------ color K-20 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	71.0785	65	5	19389	1954	15	1123	817	
+
+------ color K-20 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	69.4138	70	6	20505	2018	15	1148	857	
+
+------ color K-20 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	70.0984	68	6	20046	2026	15	1171	841	
+
+------ color K-20 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	62.2524	86	7	25306	2593	15	1508	1071	
+
+------ color K-50 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	69.2646	78	14	20605	2182	67	1247	868	
+
+------ color K-50 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	70.5982	74	13	19711	2087	68	1196	824	
+
+------ color K-100 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	75.1447	74	22	16663	1989	236	1045	710	
+
+------ color K-100 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	75.5221	74	23	16410	1975	237	1036	704	
+
+------ color K-200 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	79.0245	82	39	14062	2508	896	988	626	
+
+------ color K-400 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	82.2255	108	71	11916	4823	3386	907	532	
+
+------ color K-1000 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	85.1999	176	145	9922	22171	20613	1081	478	
+
+------ aerial K-10 k-100
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	64.9879	569	4	96096	15197	9	8554	6635	
+
+------ aerial K-100 k-1
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	99.5347	9	2	1277	619	388	141	90	
+
+------ aerial K-200 k-1
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	99.5741	8	2	1169	1608	1398	129	81	
+
+------ aerial K-300 k-1
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	99.6827	7	2	871	3340	3155	106	79	
+
+------ aerial K-400 k-1
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	99.6848	7	2	865	5933	5760	110	63	
+
+------ aerial K-500 k-1
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	99.7555	5	2	671	9035	8893	92	50	
+
+------ aerial K-1000 k-1
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	99.8623	4	2	378	34698	34597	70	31	
+
+------ aerial K-2000 k-1
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	99.8863	3	2	312	141489	141386	75	28	
+
+------ aerial K-10 k-1
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	94.9476	82	1	13867	3045	13	1962	1070	
+
+------ aerial K-50 k-1
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	99.6524	6	1	954	292	120	104	68	
+
+------ aerial K-100 k-1
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	99.5078	9	2	1351	632	390	147	95	
+
+------ audio K-500 k-1
+accu	fe(%)	io	page	pts	ttl(us)	lb(us)	io(us)	sch(us)
+1	75.2449	370	106	13216	32062	25846	3556	2660	
+

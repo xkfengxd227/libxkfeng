@@ -1,0 +1,62 @@
+# depslib dependency file v1.0
+1484833311 source:/home/xikafe/libxkfeng/lshnng/common.cpp
+	"common.h"
+	"cost.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<yael/vector.h>
+	<sys/time.h>
+	<sys/stat.h>
+	<sys/types.h>
+	<unistd.h>
+
+1484833311 /home/xikafe/libxkfeng/lshnng/common.h
+	<stdio.h>
+	<sys/time.h>
+	<time.h>
+	<string.h>
+	<stdlib.h>
+	"cost.h"
+
+1484834531 /home/xikafe/libxkfeng/lshnng/cost.h
+
+1484833311 source:/home/xikafe/libxkfeng/lshnng/dyarray.cpp
+	"common.h"
+	"dyarray.h"
+	<stdlib.h>
+	<string.h>
+
+1484833311 /home/xikafe/libxkfeng/lshnng/dyarray.h
+
+1484833311 source:/home/xikafe/libxkfeng/lshnng/heap.cpp
+	"heap.h"
+	"common.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1484833311 /home/xikafe/libxkfeng/lshnng/heap.h
+	"common.h"
+
+1484833311 source:/home/xikafe/libxkfeng/lshnng/lsh.cpp
+	"common.h"
+	"lsh.h"
+	"rand.h"
+	"dyarray.h"
+	<time.h>
+	<math.h>
+	<stdlib.h>
+	<yael/vector.h>
+	<unistd.h>
+	<sys/stat.h>
+	<sys/types.h>
+	<string.h>
+
+1484833311 /home/xikafe/libxkfeng/lshnng/lsh.h
+	"common.h"
+	"dyarray.h"
+
+1484834565 /home/xikafe/libxkfeng/lshnng/rand.h
+
