@@ -12,10 +12,26 @@ public:
   int     d;                  // 数据维度
   map<int, vector<DoubleIndex> > edges;
                               // 图中所有有向边倒排列表：id为记录，以id为起点的边为列表
+	bool	NorF;				// Near-or-Far图的性质：true-近邻图；false-远邻图
 
   // 构造函数，传递基本参数，初始化边存储空间
-  NeighborGraph(int _n, int _d): n(_n), d(_d){};
+  NeighborGraph(int _n, int _d, bool nf): n(_n), d(_d), NorF(nf){};
   ~NeighborGraph(){};
+  
+  /**
+   * construction method - incrementally
+   *	means the neighbor of the i-th node can only be found 
+   * 	from the former i nodes 
+   * @params 	v 	base vector
+   * @params 	k 	number of nns to search
+   */
+   void construct_incremental(const float *v, int k);
+   
+  /**
+   * normal construct with knn search
+   *	means seach knns for each node as their neighbors
+   */
+   void construct_knn(const float *v, int k);
 
   /**
    * some converge style:

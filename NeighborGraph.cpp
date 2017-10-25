@@ -12,6 +12,9 @@ extern "C"{
 #include <stdio.h>
 #include <stdlib.h>
 
+void construct_incremental(const float *v, int k);
+
+
 converge_to_best_neighbor(const float *query, float *v, int d, int start_id){
   /** looply check out all neighbors of the current node, converge to the best (nearest to the query)
    *  end when no neighbor is better
