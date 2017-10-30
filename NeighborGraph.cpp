@@ -6,13 +6,56 @@
 //  Copyright © 2017年 cui1001. All rights reserved.
 //
 #include "NeighborGraph.h"
+#include "common.h"
 extern "C"{
   #include <yael/vector.h>
 }
 #include <stdio.h>
 #include <stdlib.h>
+#include <vector>
+#include <map>
 
-void construct_incremental(const float *v, int k);
+void construct_incremental(const float *v, int k) {
+	/* tools variables */
+	DoubleIndex difoo;
+	vector<DoubleIndex> neighbors;
+
+	/* instance the edges */
+	edges.erase(edges.begin(), edges.end());
+
+	/* find neighbors for each node */
+	for (int i = 1; i < n; i++) {	
+	// start from the 2nd node, since the 1st has no
+	// neighbor according to the principle
+		// clear the neighbors
+		neighbors.erase(neighbors.begin(), neighbors.end());
+		
+		if (i <= k) {
+		// node (1-k)'s neighbor is their former nodes
+			for (int gi = 0; gi < i; gi++) {
+				difoo.id = gi;
+				difoo.value = odistance(v + i*d, v + gi*d, d);
+
+				neighbors.push_back(difoo);
+			}
+		}
+		else {
+		// find nns in the former i nodes (i.e., [0,i-1])
+			int *nn = ivec_new(k);
+			float *nndist = knn(1, i, d, k, v + i*d, v, nn);
+
+			for (int ki = 0; ki < k; ki++) {
+				difoo.id = nn[ki];
+				difoo.val = nndist[ki];
+
+				neighbors.push_back(difoo);
+			}
+		}
+
+		// add edge set of the node-i
+		edges.insert(pair<int, vector<DoubleIndex>>(i, neighbors));
+	}
+}
 
 
 converge_to_best_neighbor(const float *query, float *v, int d, int start_id){
