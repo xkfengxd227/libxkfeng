@@ -4,11 +4,16 @@
 main
 *.gch
 
-# ignore txt file
+# ignore txt file, ivecs files
 *.txt
+*.ivecs
+*.fvecs
 
 # ignore test folders
 adaptive_neighbor_cluster_estimation/index
 anc/index
 treenng/index
 hb/index
+
+# ignore generated doxygen files
+/doc

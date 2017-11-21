@@ -15,7 +15,7 @@
  */
 
 /// ### self-define ###: parameter list
-bool _input_parameters(int argc, char *argv[], char *dsname,
+bool _input_parameters(int argc, char *argv[], char *dsname, char *type,
 	char *basefile, char *queryfile, int *n, int *d, int *nq, int *dGT){
 
 	if(argc <= 1){
@@ -45,6 +45,7 @@ bool _input_parameters(int argc, char *argv[], char *dsname,
 
             /// ### self-define ###: get the parameter values
 			if(strcmp(pname, "ds") == 0){			strcpy(dsname, argv[i]);	}
+			else if(strcmp(pname, "type") == 0){			strcpy(type, argv[i]);	}
 			else if(strcmp(pname, "v") == 0){			strcpy(basefile, argv[i]);	}
 			else if(strcmp(pname, "q") == 0){			strcpy(queryfile, argv[i]);	}
 			else if(strcmp(pname, "n") == 0){		*n = atoi(argv[i]);	}

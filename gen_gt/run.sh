@@ -1,10 +1,11 @@
-ds=glove200d
+ds=color
 dsbasepath=/media/xikafe/dataset
-vfile=${dsbasepath}/${ds}/bin/${ds}s1000_base.fvecs
-qfile=${dsbasepath}/${ds}/bin/${ds}s1000_query.fvecs
-n=1192514
-d=200
-nq=1000
+vfile=${dsbasepath}/${ds}/bin/${ds}_base.fvecs
+qfile=${dsbasepath}/${ds}/bin/${ds}_base.fvecs
+n=67040
+d=32
+nq=67040
 dGT=1000
+type=nng # gt: groundtruth, nng: nng
 
-./main -ds ${ds} -v ${vfile} -q ${qfile} -n $n -d $d -nq ${nq} -dGT ${dGT}
+./main -type ${type} -ds ${ds} -v ${vfile} -q ${qfile} -n $n -d $d -nq ${nq} -dGT ${dGT}
