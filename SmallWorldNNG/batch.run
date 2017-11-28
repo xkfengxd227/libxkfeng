@@ -1,0 +1,6 @@
+./main -ds color -alg Indexing -K 5 -nq 10 -k 10
+./main -ds color -alg Indexing -K 2 -nq 10 -k 10
+./main -ds color -alg Indexing -K 20 -nq 10 -k 10
+./main -ds color -alg Indexing -K 100 -nq 10 -k 10
+./main -ds color -alg Indexing -K 1000 -nq 10 -k 10
+

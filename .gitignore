@@ -4,10 +4,11 @@
 main
 *.gch
 
-# ignore txt file, ivecs files
+# ignore txt file, ivecs files, backup files
 *.txt
 *.ivecs
 *.fvecs
+*.backup
 
 # ignore test folders
 adaptive_neighbor_cluster_estimation/index

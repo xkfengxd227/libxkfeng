@@ -31,3 +31,5 @@ Therefore, here is to remind you:
 
 1) remember to edit the source/head files in the libxkfeng root directory
 2) __needlist.sh only include libxkfeng files, ### do not ### put mainext.h file in the __needlist.sh, or you will regret
+
+### the newest template: [lshnng]

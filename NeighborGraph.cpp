@@ -8,65 +8,72 @@
 #include "NeighborGraph.h"
 #include "common.h"
 extern "C"{
-  #include <yael/vector.h>
+	#include <yael/vector.h>
+	#include <yael/nn.h>
+	#include <yael/machinedeps.h>
 }
 #include <stdio.h>
 #include <stdlib.h>
 #include <vector>
 #include <map>
+#include <algorithm>
 
-void construct_incremental(const float *v, int k) {
+bool DoubleIndex_Comp(DoubleIndex da, DoubleIndex db){
+	return (da.val <= db.val);
+}
+
+void NeighborGraph::construct_neat_graph_incrementally(const float *v, int k) {
 	/* tools variables */
 	DoubleIndex difoo;
 	vector<DoubleIndex> neighbors;
+	float *nndist = NULL;
+	int *nn = NULL;
 
 	/* instance the edges */
 	edges.erase(edges.begin(), edges.end());
 
 	/* find neighbors for each node */
-	for (int i = 1; i < n; i++) {	
-	// start from the 2nd node, since the 1st has no
-	// neighbor according to the principle
+	for (int i = 0; i < n; i++) {	
 		// clear the neighbors
 		neighbors.erase(neighbors.begin(), neighbors.end());
 		
-		if (i <= k) {
-		// node (1-k)'s neighbor is their former nodes
-			for (int gi = 0; gi < i; gi++) {
-				difoo.id = gi;
-				difoo.value = odistance(v + i*d, v + gi*d, d);
-
-				neighbors.push_back(difoo);
-			}
+		// the range to seek kNNs
+		int seek_range = i;					// NN seek range is set at i in default
+		if(i < k){
+			// node (0,...,k-1)'s neighbor from the whole set (may contain itself)
+			seek_range = n;
 		}
-		else {
-		// find nns in the former i nodes (i.e., [0,i-1])
-			int *nn = ivec_new(k);
-			float *nndist = knn(1, i, d, k, v + i*d, v, nn);
 
-			for (int ki = 0; ki < k; ki++) {
-				difoo.id = nn[ki];
-				difoo.val = nndist[ki];
+		// find k-NNs from the seek_range
+		nn = ivec_new(k);
+		nndist = knn(1, seek_range, d, k, v, v + i*d, nn);
 
-				neighbors.push_back(difoo);
-			}
+		for (int ki = 0; ki < k; ki++) {
+			difoo.id = nn[ki];
+			difoo.val = nndist[ki];
+
+			neighbors.push_back(difoo);
 		}
 
 		// add edge set of the node-i
-		edges.insert(pair<int, vector<DoubleIndex>>(i, neighbors));
+		edges.insert(pair<int, vector<DoubleIndex> >(i, neighbors));
+
+		// release 
+		FREE(nn);
+		FREE(nndist);
 	}
 }
 
 
-converge_to_best_neighbor(const float *query, float *v, int d, int start_id){
-  /** looply check out all neighbors of the current node, converge to the best (nearest to the query)
-   *  end when no neighbor is better
-   */
+/* void NeighborGraph::converge_to_best_neighbor(const float *query, float *v, int d, int start_id, DoubleIndex &nn){
+  /// looply check out all neighbors of the current node, converge to the best (nearest to the query)
+  ///  end when no neighbor is better
+  
 
   // current distance
   float cur_dis = odistance_square(query, v+start_id*d, d);
 
-  /* prepare neighbors */
+  // prepare neighbors 
   int nNeighbor = edges[start_id].size();
   float *vNeighbors = fvec_new(d * nNeighbor);
   // get coordinates of all neighbors
@@ -79,29 +86,27 @@ converge_to_best_neighbor(const float *query, float *v, int d, int start_id){
   int best_nid = -1;
   float best_dis = nn(1, nNeighbor, d, vNeighbors, query, &best_neighbor);
 
-  /* judge of converge */
+  // judge of converge 
   if(f_bigger(best_cur, cur_dis)){
 
   }
-
-  
-}
-converge_greedy(const float *query, float *v, int d, int start_id);
+}*/
+// void NeighborGraph::converge_greedy(const float *query, float *v, int d, int start_id, DoubleIndex &nn);
 /**
  *  @param  osh   the random vector of the orientation sensitive hashing functions
  *  @param  m     number of hashing functions
  *  @param  okeys points' orientation bits
  */
-converge_based_on_orientation(const float *query, float *v, int d, int start_id, float *osh_a, int m, int *okeys);
+// void NeighborGraph::converge_based_on_orientation(const float *query, float *v, int d, int start_id, float *osh_a, int m, int *okeys, DoubleIndex &nn);
 
 
 
-void NeighborGraph::nng_into_files(const char *filename){
-    FILE *fp = fopen(filename, "w");
-    if(fp == NULL){
-        printf("failed to open file\n");
-        return;
-    }
+void NeighborGraph::save_graph(const char *indexfolder, const char *dsname, int K){
+    char filename[255];
+
+    // text format
+    sprintf(filename, "%s/%s/%s%dSWNNG.txt", indexfolder, dsname, dsname, K);
+    FILE *fp = open_file(filename, "w");
 
     int ib, ie;
     for(ib = 0; ib < n; ib++){
@@ -110,4 +115,35 @@ void NeighborGraph::nng_into_files(const char *filename){
         }
     }
     fclose(fp);
+
+    // binary file - id
+    sprintf(filename, "%s/%s/%s_%dswnng.ivecs", indexfolder, dsname, dsname, K);
+    fp = open_file(filename, "wb");
+    for(ib = 0; ib < n; ib++){
+    	fwrite(&K, sizeof(int), 1, fp);
+        for(ie = 0; ie < edges[ib].size(); ie++){
+        	fwrite(&edges[ib][ie].id, sizeof(int), 1, fp);
+        }
+    }
+    fclose(fp);
+
+    // binary file -distance
+    sprintf(filename, "%s/%s/%s_%dswnngdis.fvecs", indexfolder, dsname, dsname, K);
+    fp = open_file(filename, "wb");
+    for(ib = 0; ib < n; ib++){
+    	fwrite(&K, sizeof(int), 1, fp);
+        for(ie = 0; ie < edges[ib].size(); ie++){
+        	float val = (float)edges[ib][ie].val;
+        	fwrite(&val, sizeof(float), 1, fp);
+        }
+    }
+    fclose(fp);
+}
+
+
+void load_graph(const char *filename){
+	// open file
+	FILE *fp = open_file(filename, "r");
+
+
 }
