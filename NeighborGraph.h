@@ -4,7 +4,7 @@
 //    desp: the number of neighbors is not constant
 //
 //  Created by 冯小康 on 2017/7/22.
-//  Copyright ? 2017年 cui1001. All rights reserved.
+//  Copyright ? 2018年 cui1001. All rights reserved.
 //
 #include "common.h"
 #include <map>
