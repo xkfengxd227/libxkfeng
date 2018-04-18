@@ -1,6 +1,5 @@
 //
 //  NeighborGraph.cpp
-//  FANNG类的实现
 //
 //  Created by 冯小康 on 2017/7/22.
 //  Copyright © 2017年 cui1001. All rights reserved.
