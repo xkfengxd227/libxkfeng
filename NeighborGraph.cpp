@@ -25,20 +25,23 @@ bool DoubleIndex_Comp(DoubleIndex da, DoubleIndex db){
 void NeighborGraph::construct_neat_graph_incrementally(const float *v, int k) {
 	/* tools variables */
 	DoubleIndex difoo;
-	vector<DoubleIndex> neighbors;
-	float *nndist = NULL;
+	vector<int> neighbor;                           // neighbor ID list
+    vector<double> neighbordis;                     // neighbor distance list
+	double *nndist = NULL;
 	int *nn = NULL;
 
-	/* instance the edges */
-	edges.erase(edges.begin(), edges.end());
+	/* instance the edge and distance */
+	edge.erase(edge.begin(), edge.end());
+    edgedis.erase(edgedis.begin(), edgedis.end());
 
 	/* find neighbors for each node */
 	for (int i = 0; i < n; i++) {	
 		// clear the neighbors
-		neighbors.erase(neighbors.begin(), neighbors.end());
+		neighbor.erase(neighbor.begin(), neighbor.end());
+        neighbordis.erase(neighbordis.begin(), neighbordis.end());
 		
 		// the range to seek kNNs
-		int seek_range = i;					// NN seek range is set at i in default
+		int seek_range = i;                             // NN seek range is set at i in default
 		if(i < k){
 			// node (0,...,k-1)'s neighbor from the whole set (may contain itself)
 			seek_range = n;
@@ -48,15 +51,14 @@ void NeighborGraph::construct_neat_graph_incrementally(const float *v, int k) {
 		nn = ivec_new(k);
 		nndist = knn(1, seek_range, d, k, v, v + i*d, nn);
 
-		for (int ki = 0; ki < k; ki++) {
-			difoo.id = nn[ki];
-			difoo.val = nndist[ki];
-
-			neighbors.push_back(difoo);
+		for (int ki = 0; ki < k; ki++) {                // copy IDs and distances into graph
+			neighbor.push_back(nn[ki]);
+			neighbordis.push_back(nndist[ki]);
 		}
 
 		// add edge set of the node-i
-		edges.insert(pair<int, vector<DoubleIndex> >(i, neighbors));
+		edge.insert(pair<int, vector<int> >(i, neighbor));
+        edgedis.insert(pair<int, vector<double> >(i, neighbordis));
 
 		// release 
 		FREE(nn);
@@ -78,7 +80,7 @@ void NeighborGraph::construct_neat_graph_incrementally(const float *v, int k) {
   float *vNeighbors = fvec_new(d * nNeighbor);
   // get coordinates of all neighbors
   for(int i = 0; i < nNeighbor; i++){
-    int _nid = edges[start_id][i].id;
+    int _nid = edge[start_id][i];
     memcpy(vNeighbors+i*d, v+_nid*d, sizeof(float)*d);
   }
 
@@ -101,39 +103,39 @@ void NeighborGraph::construct_neat_graph_incrementally(const float *v, int k) {
 
 
 
-void NeighborGraph::save_graph(const char *indexfolder, const char *dsname, int K){
+void NeighborGraph::save_knn_graph(const char *indexfolder, const char *dsname, int K){
     char filename[255];
 
     // text format
-    sprintf(filename, "%s/%s/%s%dSWNNG.txt", indexfolder, dsname, dsname, K);
+    sprintf(filename, "%s/%s/%s%dSW.kNNG.txt", indexfolder, dsname, dsname, K);
     FILE *fp = open_file(filename, "w");
 
     int ib, ie;
     for(ib = 0; ib < n; ib++){
-        for(ie = 0; ie < edges[ib].size(); ie++){
-            fprintf(fp, "%d %d %lf\n", ib, edges[ib][ie].id, edges[ib][ie].val);
+        for(ie = 0; ie < edge[ib].size(); ie++){
+            fprintf(fp, "%d %d %lf\n", ib, edge[ib][ie], edgedis[ib][ie]);
         }
     }
     fclose(fp);
 
     // binary file - id
-    sprintf(filename, "%s/%s/%s_%dswnng.ivecs", indexfolder, dsname, dsname, K);
+    sprintf(filename, "%s/%s/%s_%dswknng.ivecs", indexfolder, dsname, dsname, K);
     fp = open_file(filename, "wb");
     for(ib = 0; ib < n; ib++){
     	fwrite(&K, sizeof(int), 1, fp);
-        for(ie = 0; ie < edges[ib].size(); ie++){
-        	fwrite(&edges[ib][ie].id, sizeof(int), 1, fp);
+        for(ie = 0; ie < edge[ib].size(); ie++){
+        	fwrite(&edge[ib][ie], sizeof(int), 1, fp);
         }
     }
     fclose(fp);
 
     // binary file -distance
-    sprintf(filename, "%s/%s/%s_%dswnngdis.fvecs", indexfolder, dsname, dsname, K);
+    sprintf(filename, "%s/%s/%s_%dswknngdis.fvecs", indexfolder, dsname, dsname, K);
     fp = open_file(filename, "wb");
     for(ib = 0; ib < n; ib++){
     	fwrite(&K, sizeof(int), 1, fp);
-        for(ie = 0; ie < edges[ib].size(); ie++){
-        	float val = (float)edges[ib][ie].val;
+        for(ie = 0; ie < edgedis[ib].size(); ie++){
+        	float val = (float)edgedis[ib][ie];
         	fwrite(&val, sizeof(float), 1, fp);
         }
     }
