@@ -25,20 +25,23 @@ bool DoubleIndex_Comp(DoubleIndex da, DoubleIndex db){
 void NeighborGraph::construct_neat_graph_incrementally(const float *v, int k) {
 	/* tools variables */
 	DoubleIndex difoo;
-	vector<DoubleIndex> neighbors;
-	float *nndist = NULL;
+	vector<int> neighbor;                           // neighbor ID list
+    vector<double> neighbordis;                     // neighbor distance list
+	double *nndist = NULL;
 	int *nn = NULL;
 
-	/* instance the edges */
-	edges.erase(edges.begin(), edges.end());
+	/* instance the edge and distance */
+	edge.erase(edge.begin(), edge.end());
+    edgedis.erase(edgedis.begin(), edgedis.end());
 
 	/* find neighbors for each node */
 	for (int i = 0; i < n; i++) {	
 		// clear the neighbors
-		neighbors.erase(neighbors.begin(), neighbors.end());
+		neighbor.erase(neighbor.begin(), neighbor.end());
+        neighbordis.erase(neighbordis.begin(), neighbordis.end());
 		
 		// the range to seek kNNs
-		int seek_range = i;					// NN seek range is set at i in default
+		int seek_range = i;                             // NN seek range is set at i in default
 		if(i < k){
 			// node (0,...,k-1)'s neighbor from the whole set (may contain itself)
 			seek_range = n;
@@ -48,15 +51,14 @@ void NeighborGraph::construct_neat_graph_incrementally(const float *v, int k) {
 		nn = ivec_new(k);
 		nndist = knn(1, seek_range, d, k, v, v + i*d, nn);
 
-		for (int ki = 0; ki < k; ki++) {
-			difoo.id = nn[ki];
-			difoo.val = nndist[ki];
-
-			neighbors.push_back(difoo);
+		for (int ki = 0; ki < k; ki++) {                // copy IDs and distances into graph
+			neighbor.push_back(nn[ki]);
+			neighbordis.push_back(nndist[ki]);
 		}
 
 		// add edge set of the node-i
-		edges.insert(pair<int, vector<DoubleIndex> >(i, neighbors));
+		edge.insert(pair<int, vector<int> >(i, neighbor));
+        edgedis.insert(pair<int, vector<double> >(i, neighbordis));
 
 		// release 
 		FREE(nn);
@@ -78,7 +80,7 @@ void NeighborGraph::construct_neat_graph_incrementally(const float *v, int k) {
   float *vNeighbors = fvec_new(d * nNeighbor);
   // get coordinates of all neighbors
   for(int i = 0; i < nNeighbor; i++){
-    int _nid = edges[start_id][i].id;
+    int _nid = edge[start_id][i];
     memcpy(vNeighbors+i*d, v+_nid*d, sizeof(float)*d);
   }
 
@@ -99,20 +101,76 @@ void NeighborGraph::construct_neat_graph_incrementally(const float *v, int k) {
  */
 // void NeighborGraph::converge_based_on_orientation(const float *query, float *v, int d, int start_id, float *osh_a, int m, int *okeys, DoubleIndex &nn);
 
-
-
-void NeighborGraph::save_graph(const char *indexfolder, const char *dsname, int K){
+/** save [non direct graph] */
+void NeighborGraph::save_graph(const char *indexfolder, const char *dsname){
     char filename[255];
+    int ib, ie;
+    
+    
+    // save id list - text format
+    sprintf(filename, "%s/%s/%s%dSW%sNNG.txt", indexfolder, dsname, dsname, NonDGraphFlag);
+    FILE *fp = open_file(filename, "w");
 
-    // text format
+    
+    for(ib = 0; ib < n; ib++){
+        int cnt = edge[ib].size();
+        fprintf(fp, "%d", cnt);
+        for(ie = 0; ie < cnt; ie++){
+            fprintf(fp, " %d", edge[ib][ie]);
+        }
+        fprintf(fp, "\n");
+    }
+    fclose(fp);
+    
+    // save distance list - text format
+    sprintf(filename, "%s/%s/%s%dSW%sNNGDIS.txt", indexfolder, dsname, dsname, NonDGraphFlag);
+    FILE *fp = open_file(filename, "w");
+    
+    for(ib = 0; ib < n; ib++){
+        int cnt = edge[ib].size();
+        fprintf(fp, "%d", cnt);
+        for(ie = 0; ie < cnt; ie++){
+            fprintf(fp, " %f", (float)edgedis[ib][ie]);
+        }
+        fprintf(fp, "\n");
+    }
+    fclose(fp);
+}
+
+/** save [knng] */
+void NeighborGraph::save_knn_graph(const char *indexfolder, const char *dsname, int K){
+    char filename[255];
+    int ib, ie;
+
+    // save id list - text format
     sprintf(filename, "%s/%s/%s%dSWNNG.txt", indexfolder, dsname, dsname, K);
     FILE *fp = open_file(filename, "w");
 
-    int ib, ie;
     for(ib = 0; ib < n; ib++){
-        for(ie = 0; ie < edges[ib].size(); ie++){
-            fprintf(fp, "%d %d %lf\n", ib, edges[ib][ie].id, edges[ib][ie].val);
+        int cnt = edge[ib].size();
+        /* assert check K == cnt ? */
+        
+        fprintf(fp, "%d", K);
+        for(ie = 0; ie < K; ie++){
+            fprintf(fp, " %d", edge[ib][ie]);
         }
+        fprintf(fp, "\n");
+    }
+    fclose(fp);
+    
+    // save distance list - text format
+    sprintf(filename, "%s/%s/%s%dSWNNGDIS.txt", indexfolder, dsname, dsname, K);
+    FILE *fp = open_file(filename, "w");
+
+    for(ib = 0; ib < n; ib++){
+        int cnt = edge[ib].size();
+        /* assert check K == cnt ? */
+        
+        fprintf(fp, "%d", K);
+        for(ie = 0; ie < K; ie++){
+            fprintf(fp, " %f", (float)edgedis[ib][ie]);
+        }
+        fprintf(fp, "\n");
     }
     fclose(fp);
 
@@ -121,8 +179,8 @@ void NeighborGraph::save_graph(const char *indexfolder, const char *dsname, int 
     fp = open_file(filename, "wb");
     for(ib = 0; ib < n; ib++){
     	fwrite(&K, sizeof(int), 1, fp);
-        for(ie = 0; ie < edges[ib].size(); ie++){
-        	fwrite(&edges[ib][ie].id, sizeof(int), 1, fp);
+        for(ie = 0; ie < K; ie++){
+        	fwrite(&edge[ib][ie], sizeof(int), 1, fp);
         }
     }
     fclose(fp);
@@ -132,18 +190,10 @@ void NeighborGraph::save_graph(const char *indexfolder, const char *dsname, int 
     fp = open_file(filename, "wb");
     for(ib = 0; ib < n; ib++){
     	fwrite(&K, sizeof(int), 1, fp);
-        for(ie = 0; ie < edges[ib].size(); ie++){
-        	float val = (float)edges[ib][ie].val;
+        for(ie = 0; ie < K; ie++){
+        	float val = (float)edgedis[ib][ie];
         	fwrite(&val, sizeof(float), 1, fp);
         }
     }
     fclose(fp);
-}
-
-
-void load_graph(const char *filename){
-	// open file
-	FILE *fp = open_file(filename, "r");
-
-
 }
