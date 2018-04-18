@@ -4,10 +4,12 @@
 //    desp: the number of neighbors is not constant
 //
 //  Created by 冯小康 on 2017/7/22.
-//  Copyright © 2017年 cui1001. All rights reserved.
+//  Copyright ? 2017年 cui1001. All rights reserved.
 //
 #include "common.h"
 #include <map>
+
+#define     NonDGraphFlag       "NonD"  // 无向图的标志
 
 class NeighborGraph{
 public:
@@ -55,12 +57,26 @@ public:
    */
   // void converge_based_on_orientation(const float *query, float *v, int d, int start_id, float *osh_a, int m, int *okeys, DoubleIndex &nn);
 
-  // 输出所有边：起点 终点 长度
-  void save_graph(const char *, const char*, int);
-
-
+  
+ 
   /**
-   * load graph from file
+   *    普通的存储近邻图的方法
+   *    说明：
+   *        - 只能是txt格式的文件，文件名color1000SWNonDNNG.txt，意为Non Direct NNG
+   *        - 一个存放ID，一个存放距离
+   *        - 每一行一个数据点的邻居数据，拿ID为例，【count id1 id2 id3...】
+   *        - 即先存一个邻居数量，再依次存放邻居ID
+   *        - 默认行号即为该节点ID
    */
-  void load_graph(const char *filename);
+  void save_graph();
+  
+  /**
+   *	kNN Graph的存储，用户判断图是kNN Graph，其存储方式略有不同
+   *    说明：
+   *        - 因为是kNN Graph，因此比较整齐（即每个数据点的邻居数目相同）
+   *        - 因此除了按照txt格式存储，还可以额外存储ivecs和fvecs的二进制格式
+   *        - 文本文件后缀为color1000SWNNG.txt, color_1000swnng.ivecs, color_1000swnngdis.fvecs
+   */
+  void save_knn_graph(const char *, const char*, int);
+
 };
