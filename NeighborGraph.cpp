@@ -101,51 +101,99 @@ void NeighborGraph::construct_neat_graph_incrementally(const float *v, int k) {
  */
 // void NeighborGraph::converge_based_on_orientation(const float *query, float *v, int d, int start_id, float *osh_a, int m, int *okeys, DoubleIndex &nn);
 
-
-
-void NeighborGraph::save_knn_graph(const char *indexfolder, const char *dsname, int K){
+/** save [non direct graph] */
+void NeighborGraph::save_graph(const char *indexfolder, const char *dsname){
     char filename[255];
-
-    // text format
-    sprintf(filename, "%s/%s/%s%dSW.kNNG.txt", indexfolder, dsname, dsname, K);
+    int ib, ie;
+    
+    
+    // save id list - text format
+    sprintf(filename, "%s/%s/%s%dSW%sNNG.txt", indexfolder, dsname, dsname, NonDGraphFlag);
     FILE *fp = open_file(filename, "w");
 
-    int ib, ie;
+    
     for(ib = 0; ib < n; ib++){
-        for(ie = 0; ie < edge[ib].size(); ie++){
-            fprintf(fp, "%d %d %lf\n", ib, edge[ib][ie], edgedis[ib][ie]);
+        int cnt = edge[ib].size();
+        fprintf(fp, "%d", cnt);
+        for(ie = 0; ie < cnt; ie++){
+            fprintf(fp, " %d", edge[ib][ie]);
         }
+        fprintf(fp, "\n");
+    }
+    fclose(fp);
+    
+    // save distance list - text format
+    sprintf(filename, "%s/%s/%s%dSW%sNNGDIS.txt", indexfolder, dsname, dsname, NonDGraphFlag);
+    FILE *fp = open_file(filename, "w");
+    
+    for(ib = 0; ib < n; ib++){
+        int cnt = edge[ib].size();
+        fprintf(fp, "%d", cnt);
+        for(ie = 0; ie < cnt; ie++){
+            fprintf(fp, " %f", (float)edgedis[ib][ie]);
+        }
+        fprintf(fp, "\n");
+    }
+    fclose(fp);
+}
+
+/** save [knng] */
+void NeighborGraph::save_knn_graph(const char *indexfolder, const char *dsname, int K){
+    char filename[255];
+    int ib, ie;
+
+    // save id list - text format
+    sprintf(filename, "%s/%s/%s%dSWNNG.txt", indexfolder, dsname, dsname, K);
+    FILE *fp = open_file(filename, "w");
+
+    for(ib = 0; ib < n; ib++){
+        int cnt = edge[ib].size();
+        /* assert check K == cnt ? */
+        
+        fprintf(fp, "%d", K);
+        for(ie = 0; ie < K; ie++){
+            fprintf(fp, " %d", edge[ib][ie]);
+        }
+        fprintf(fp, "\n");
+    }
+    fclose(fp);
+    
+    // save distance list - text format
+    sprintf(filename, "%s/%s/%s%dSWNNGDIS.txt", indexfolder, dsname, dsname, K);
+    FILE *fp = open_file(filename, "w");
+
+    for(ib = 0; ib < n; ib++){
+        int cnt = edge[ib].size();
+        /* assert check K == cnt ? */
+        
+        fprintf(fp, "%d", K);
+        for(ie = 0; ie < K; ie++){
+            fprintf(fp, " %f", (float)edgedis[ib][ie]);
+        }
+        fprintf(fp, "\n");
     }
     fclose(fp);
 
     // binary file - id
-    sprintf(filename, "%s/%s/%s_%dswknng.ivecs", indexfolder, dsname, dsname, K);
+    sprintf(filename, "%s/%s/%s_%dswnng.ivecs", indexfolder, dsname, dsname, K);
     fp = open_file(filename, "wb");
     for(ib = 0; ib < n; ib++){
     	fwrite(&K, sizeof(int), 1, fp);
-        for(ie = 0; ie < edge[ib].size(); ie++){
+        for(ie = 0; ie < K; ie++){
         	fwrite(&edge[ib][ie], sizeof(int), 1, fp);
         }
     }
     fclose(fp);
 
     // binary file -distance
-    sprintf(filename, "%s/%s/%s_%dswknngdis.fvecs", indexfolder, dsname, dsname, K);
+    sprintf(filename, "%s/%s/%s_%dswnngdis.fvecs", indexfolder, dsname, dsname, K);
     fp = open_file(filename, "wb");
     for(ib = 0; ib < n; ib++){
     	fwrite(&K, sizeof(int), 1, fp);
-        for(ie = 0; ie < edgedis[ib].size(); ie++){
+        for(ie = 0; ie < K; ie++){
         	float val = (float)edgedis[ib][ie];
         	fwrite(&val, sizeof(float), 1, fp);
         }
     }
     fclose(fp);
-}
-
-
-void load_graph(const char *filename){
-	// open file
-	FILE *fp = open_file(filename, "r");
-
-
 }
