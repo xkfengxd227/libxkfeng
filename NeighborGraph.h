@@ -11,11 +11,12 @@
 
 class NeighborGraph{
 public:
-  int     n;                  // 数据集规模
-  int     d;                  // 数据维度
-  map<int, vector<DoubleIndex> > edges;
-                                              // 图中所有有向边倒排列表：id为记录，以id为起点的边为列表
-	bool	NorF;                                 // Near-or-Far图的性质：true-近邻图；false-远邻图
+  int     n;                            // 数据集规模
+  int     d;                            // 数据维度
+  map<int, vector<int> > edge;          // 图中的边：一个节点ID-邻居ID列表
+  map<int, vector<double> > edgedis;	// 图中的边的距离：同上
+	
+  bool	NorF;                           // Near-or-Far图的性质：true-近邻图；false-远邻图
 
   // 构造函数，传递基本参数，初始化边存储空间
   NeighborGraph(int _n, int _d, bool nf): n(_n), d(_d), NorF(nf){};
